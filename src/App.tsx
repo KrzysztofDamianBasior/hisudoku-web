@@ -1,33 +1,33 @@
 import React from "react";
-import logo from "./logo.svg";
 import "./App.css";
-
-// type AppProps = {
-//   message: string;
-// }
-// const App = ({ message }: AppProps): JSX.Element => <div>{message}</div>;
-// const App: React.FunctionComponent<{ message: string }> = ({ message }) => (
-//   <div>{message}</div>
-// );
-// const [user, setUser] = useState<User | null>(null);
+import { Routes, Route, useLocation } from "react-router-dom";
+import { TransitionGroup, CSSTransition } from "react-transition-group";
+import Home from "./pages/Home";
+import "animate.css";
 
 function App() {
+  const location = useLocation();
+
+  const transitionClasses = {
+    enter: "animate__animated",
+    enterActive: "animate__fadeInTopLeft",
+    exit: "animate__animated",
+    exitActive: "animate__fadeOutRight",
+  };
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
+      <TransitionGroup component={null}>
+        <CSSTransition
+          key={location.key}
+          timeout={400}
+          classNames={transitionClasses}
         >
-          Learn React
-        </a>
-      </header>
+          <Routes location={location}>
+            <Route path="/" element={<Home />} />
+          </Routes>
+        </CSSTransition>
+      </TransitionGroup>
     </div>
   );
 }
