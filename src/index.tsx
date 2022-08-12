@@ -12,6 +12,8 @@ import {
 } from "@apollo/client";
 import { setContext } from "@apollo/client/link/context";
 import { BrowserRouter } from "react-router-dom";
+import { store } from "./redux/store";
+import { Provider } from "react-redux";
 
 const authLink = setContext((_, { headers }) => ({
   headers: {
@@ -34,9 +36,11 @@ const root = ReactDOM.createRoot(
 root.render(
   <React.StrictMode>
     <ApolloProvider client={client}>
-      <BrowserRouter>
-        <App />
-      </BrowserRouter>
+      <Provider store={store}>
+        <BrowserRouter>
+          <App />
+        </BrowserRouter>
+      </Provider>
     </ApolloProvider>
   </React.StrictMode>
 );

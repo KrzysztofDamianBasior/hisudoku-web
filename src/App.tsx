@@ -4,9 +4,12 @@ import { Routes, Route, useLocation } from "react-router-dom";
 import { TransitionGroup, CSSTransition } from "react-transition-group";
 import Home from "./pages/Home";
 import "animate.css";
+import { useAppSelector } from "./hooks";
+import { RootState } from "./redux/store";
 
 function App() {
   const location = useLocation();
+  const theme = useAppSelector((state: RootState) => state.appTheme.theme);
 
   const transitionClasses = {
     enter: "animate__animated",
@@ -16,7 +19,7 @@ function App() {
   };
 
   return (
-    <div className="App">
+    <div className="App" id={theme}>
       <TransitionGroup component={null}>
         <CSSTransition
           key={location.key}
