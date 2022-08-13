@@ -1,9 +1,11 @@
 import React from "react";
-import "./App.css";
+
 import { Routes, Route, useLocation } from "react-router-dom";
 import { TransitionGroup, CSSTransition } from "react-transition-group";
 import Home from "./pages/Home";
+import SignIn from "./pages/SignIn";
 import "animate.css";
+
 import { useAppSelector } from "./hooks";
 import { RootState } from "./redux/store";
 
@@ -28,6 +30,7 @@ function App() {
         >
           <Routes location={location}>
             <Route path="/" element={<Home />} />
+            <Route path="/signin" element={<SignIn />} />
           </Routes>
         </CSSTransition>
       </TransitionGroup>
