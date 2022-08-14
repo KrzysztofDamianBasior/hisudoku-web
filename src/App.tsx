@@ -2,9 +2,8 @@ import React from "react";
 
 import { Routes, Route, useLocation } from "react-router-dom";
 import { TransitionGroup, CSSTransition } from "react-transition-group";
-import Home from "./pages/Home";
-import SignIn from "./pages/SignIn";
-import "animate.css";
+import Home from "./pages/Home/Home";
+import SignIn from "./pages/SignIn/SignIn";
 
 import { useAppSelector } from "./hooks";
 import { RootState } from "./redux/store";
