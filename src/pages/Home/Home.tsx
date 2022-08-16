@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useRef, useCallback } from "react";
 import { useScrollButtons } from "../../hooks";
 
 import InternalNavigation from "../../components/InternalNavigation/InternalNavigation";
@@ -9,24 +9,30 @@ import AccountDashboard from "../../components/AccountDashboard/AccountDashboard
 
 export default function Home() {
   const scrollButtons = useScrollButtons();
-  const { topLeft, topRight, bottomLeft, bottomRight } = scrollButtons;
+
+  const {
+    setRefsTopLeft,
+    setRefsTopRight,
+    setRefsBottomLeft,
+    setRefsBottomRight,
+  } = scrollButtons;
 
   return (
     <div className="home">
-      {/* <InternalNavigation scrollButtons={scrollButtons} /> */}
+      <InternalNavigation scrollButtons={scrollButtons} />
       <header>
-        <div ref={topLeft} className="home__banner">
+        <div ref={setRefsTopLeft} className="home__banner">
           <HomeBanner />
         </div>
-        <div ref={topRight} className="home__account-dashboard">
+        <div ref={setRefsTopRight} className="home__account-dashboard">
           <AccountDashboard />
         </div>
       </header>
       <main>
-        <div ref={bottomLeft} className="home__game-creator">
+        <div ref={setRefsBottomLeft} className="home__game-creator">
           <GameCreator />
         </div>
-        <div ref={bottomRight} className="home__about">
+        <div ref={setRefsBottomRight} className="home__about">
           <About />
         </div>
       </main>
