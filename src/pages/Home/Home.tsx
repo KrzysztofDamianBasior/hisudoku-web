@@ -1,10 +1,11 @@
 import React from "react";
-import { Link } from "react-router-dom";
-
 import { useScrollButtons } from "../../hooks";
 
 import InternalNavigation from "../../components/InternalNavigation/InternalNavigation";
-import Waves from "../../components/Waves/Waves";
+import About from "../../components/About/About";
+import GameCreator from "../../components/GameCreator/GameCreator";
+import HomeBanner from "../../components/HomeBanner/HomeBanner";
+import AccountDashboard from "../../components/AccountDashboard/AccountDashboard";
 
 export default function Home() {
   const scrollButtons = useScrollButtons();
@@ -13,21 +14,20 @@ export default function Home() {
   return (
     <div className="home">
       {/* <InternalNavigation scrollButtons={scrollButtons} /> */}
-      {/* <Waves /> */}
       <header>
         <div ref={topLeft} className="home__banner">
-          Banner
+          <HomeBanner />
         </div>
         <div ref={topRight} className="home__account-dashboard">
-          Account Dashboard
+          <AccountDashboard />
         </div>
       </header>
       <main>
-        <div ref={bottomLeft} className="home__game-dashboard">
-          Game Creator
+        <div ref={bottomLeft} className="home__game-creator">
+          <GameCreator />
         </div>
         <div ref={bottomRight} className="home__about">
-          About
+          <About />
         </div>
       </main>
     </div>
