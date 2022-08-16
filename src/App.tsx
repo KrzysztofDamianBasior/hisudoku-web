@@ -2,13 +2,17 @@ import React from "react";
 
 import { Routes, Route, useLocation } from "react-router-dom";
 import { TransitionGroup, CSSTransition } from "react-transition-group";
+
 import Home from "./pages/Home/Home";
-import SignIn from "./pages/SignIn/SignIn";
+import Sign from "././pages/Sign/Sign";
+import Game from "./pages/Game/Game";
+import Profile from "./pages/Profile/Profile";
+import Settings from "./pages/Settings/Settings";
 
 import { useAppSelector } from "./hooks";
 import { RootState } from "./redux/store";
 
-function App() {
+const App = () => {
   const location = useLocation();
   const theme = useAppSelector((state: RootState) => state.appTheme.theme);
 
@@ -29,12 +33,15 @@ function App() {
         >
           <Routes location={location}>
             <Route path="/" element={<Home />} />
-            <Route path="/signin" element={<SignIn />} />
+            <Route path="/sign" element={<Sign />} />
+            <Route path="/game" element={<Game />} />
+            <Route path="/profile" element={<Profile />} />
+            <Route path="/settings" element={<Settings />} />
           </Routes>
         </CSSTransition>
       </TransitionGroup>
     </div>
   );
-}
+};
 
 export default App;

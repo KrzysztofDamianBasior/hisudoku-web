@@ -1,21 +1,14 @@
 import React from "react";
-import {
-  setDarkTheme,
-  setLightTheme,
-  toggleTheme,
-} from "../../redux/slices/themeSlice";
-import { useDispatch } from "react-redux";
 import { Link } from "react-router-dom";
+
 import { useScrollButtons } from "../../hooks";
+
 import InternalNavigation from "../../components/InternalNavigation/InternalNavigation";
 import Waves from "../../components/Waves/Waves";
-import "./home.scss";
 
 export default function Home() {
   const scrollButtons = useScrollButtons();
   const { topLeft, topRight, bottomLeft, bottomRight } = scrollButtons;
-  //const dispatch = useDispatch();
-  //dispatch(setDarkTheme())
 
   return (
     <div className="home">
