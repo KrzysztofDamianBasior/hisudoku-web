@@ -20,7 +20,7 @@ export const useScrollButtons = (threshold = 0.2) => {
           topLeft.current = node;
           topLeftRef(node);
         },
-        [topLeftRef]
+        [topLeftRef, topLeft]
       );
 
       const setRefsBottomLeft = useCallback(
@@ -28,7 +28,7 @@ export const useScrollButtons = (threshold = 0.2) => {
           bottomLeft.current = node;
           bottomLeftRef(node);
         },
-        [bottomLeftRef]
+        [bottomLeftRef, bottomLeft]
       );
 
       const setRefsTopRight = useCallback(
@@ -36,7 +36,7 @@ export const useScrollButtons = (threshold = 0.2) => {
           topRight.current = node;
           topRightRef(node);
         },
-        [topRightRef]
+        [topRightRef, topRight]
       );
 
       const setRefsBottomRight = useCallback(
@@ -44,7 +44,7 @@ export const useScrollButtons = (threshold = 0.2) => {
           bottomRight.current = node;
           bottomRightRef(node);
         },
-        [bottomRight]
+        [bottomRight, bottomRightRef]
       );
 
     type visibleButtonsUnion = 'tr' | 'tl' | 'br' | 'bl'
