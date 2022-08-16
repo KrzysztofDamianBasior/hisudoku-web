@@ -9,6 +9,8 @@ import Game from "./pages/Game/Game";
 import Profile from "./pages/Profile/Profile";
 import Settings from "./pages/Settings/Settings";
 
+import ErrorBoundary from "./components/ErrorBoundary/ErrorBoundary";
+
 import { useAppSelector } from "./hooks";
 import { RootState } from "./redux/store";
 
@@ -25,21 +27,23 @@ const App = () => {
 
   return (
     <div className="App" id={theme}>
-      <TransitionGroup component={null}>
-        <CSSTransition
-          key={location.key}
-          timeout={400}
-          classNames={transitionClasses}
-        >
-          <Routes location={location}>
-            <Route path="/" element={<Home />} />
-            <Route path="/sign" element={<Sign />} />
-            <Route path="/game" element={<Game />} />
-            <Route path="/profile" element={<Profile />} />
-            <Route path="/settings" element={<Settings />} />
-          </Routes>
-        </CSSTransition>
-      </TransitionGroup>
+      <ErrorBoundary>
+        <TransitionGroup component={null}>
+          <CSSTransition
+            key={location.key}
+            timeout={400}
+            classNames={transitionClasses}
+          >
+            <Routes location={location}>
+              <Route path="/" element={<Home />} />
+              <Route path="/sign" element={<Sign />} />
+              <Route path="/game" element={<Game />} />
+              <Route path="/profile" element={<Profile />} />
+              <Route path="/settings" element={<Settings />} />
+            </Routes>
+          </CSSTransition>
+        </TransitionGroup>
+      </ErrorBoundary>
     </div>
   );
 };
