@@ -1,10 +1,4 @@
-import React, { useState } from "react";
-
-// Image by <a href="https://pixabay.com/users/felixmittermeier-4397258/?utm_source=link-attribution&amp;utm_medium=referral&amp;utm_campaign=image&amp;utm_content=2695569">Felix-Mittermeier.de</a> from <a href="https://pixabay.com//?utm_source=link-attribution&amp;utm_medium=referral&amp;utm_campaign=image&amp;utm_content=2695569">Pixabay</a>
-// Image by <a href="https://pixabay.com/users/dimitrisvetsikas1969-1857980/?utm_source=link-attribution&amp;utm_medium=referral&amp;utm_campaign=image&amp;utm_content=2329680">Dimitris Vetsikas</a> from <a href="https://pixabay.com//?utm_source=link-attribution&amp;utm_medium=referral&amp;utm_campaign=image&amp;utm_content=2329680">Pixabay</a>
-import clouds from "../../assets/clouds.jpg";
-import stars from "../../assets/stars.jpg";
-
+import React, { useState, useEffect } from "react";
 import { RiSunFill } from "react-icons/ri";
 import { BsFillMoonStarsFill } from "react-icons/bs";
 import {
@@ -12,20 +6,29 @@ import {
   setLightTheme,
   toggleTheme,
 } from "../../redux/slices/themeSlice";
+import { RootState } from "../../redux/store";
+import { useAppSelector } from "../../hooks";
 import { useDispatch } from "react-redux";
 
 type Props = {
   name: string;
-  // checked: boolean;
-  // onChange: (event: React.ChangeEvent<HTMLInputElement>) => void;
 };
 
 const ToggleThemeSwitch = (props: Props) => {
-  const [checked, setChecked] = useState<boolean>(false);
+  const theme = useAppSelector((state: RootState) => state.appTheme.theme);
+  const [checked, setChecked] = useState<boolean>(
+    theme === "light" ? true : false
+  );
   const [disabled, setDisabled] = useState<boolean>(false);
-  // e.target.checked
-  // const dispatch = useDispatch();
-  // dispatch(setDarkTheme());
+
+  const dispatch = useDispatch();
+  useEffect(() => {
+    if (checked === true) {
+      dispatch(setLightTheme());
+    } else {
+      dispatch(setDarkTheme());
+    }
+  }, [checked]);
 
   function handleKeyPress(e) {
     if (e.keyCode !== 32) return;
@@ -33,7 +36,7 @@ const ToggleThemeSwitch = (props: Props) => {
     e.preventDefault();
     setChecked(!checked);
   }
-  const optionLabels = ["yes", "no"];
+  const optionLabels = ["light", "dark"];
 
   return (
     <div className="toggle-switch">
@@ -77,15 +80,4 @@ const ToggleThemeSwitch = (props: Props) => {
   );
 };
 
-ToggleThemeSwitch.defaultProps = {
-  optionLabels: ["Yes", "No"],
-};
-
 export default ToggleThemeSwitch;
-
-//filter: drop-shadow(0 0 5px #fff) drop-shadow(0 0 10px #fff) drop-shadow(0 0 15px #fff);
-{
-  /* <div style={{ 
-  backgroundImage: `url(${process.env.PUBLIC_URL + '/image.png'})` 
-}}></div> */
-}

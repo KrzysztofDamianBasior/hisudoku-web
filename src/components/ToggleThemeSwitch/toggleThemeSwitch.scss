@@ -1,15 +1,14 @@
+@use "../../styles/breakpoints";
+
 .toggle-switch {
-  @media screen and (max-width: 991px) {
-    transform: scale(0.9);
+  @media screen and (max-width: breakpoints.$max-tablet) {
+    transform: scale(0.8);
   }
-  @media screen and (max-width: 767px) {
-    transform: scale(0.825);
-  }
-  @media screen and (max-width: 575px) {
+  @media screen and (max-width: breakpoints.$max-phone) {
     transform: scale(0.75);
   }
   position: relative;
-  width: 75px;
+  width: 85px;
   display: inline-block;
   vertical-align: middle;
   -webkit-user-select: none;
@@ -29,7 +28,7 @@
     &:focus {
       outline: none;
       > span {
-        box-shadow: 0 0 2px 5px $focus-color;
+        box-shadow: 0 0 2px 5px red;
       }
     }
     > span:focus {
@@ -55,8 +54,10 @@
       box-sizing: border-box;
     }
     &:before {
-      // content: "Yes";
       content: attr(data-yes);
+      @media screen and (max-width: breakpoints.$max-tablet) {
+        content: "";
+      }
       text-transform: uppercase;
       padding-left: 10px;
       background-color: #f90;
@@ -72,8 +73,10 @@
     }
   }
   &-inner:after {
-    // content: "No";
     content: attr(data-no);
+    @media screen and (max-width: breakpoints.$max-tablet) {
+      content: "";
+    }
     text-transform: uppercase;
     padding-right: 10px;
     background-color: #bbb;
@@ -90,7 +93,7 @@
     position: absolute;
     top: 0;
     bottom: 0;
-    right: 40px;
+    right: 50px;
     border: 0 solid #bbb;
     border-radius: 20px;
     transition: all 0.3s ease-in 0s;

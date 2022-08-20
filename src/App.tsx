@@ -20,18 +20,18 @@ const App = () => {
 
   const transitionClasses = {
     enter: "animate__animated",
-    enterActive: "animate__fadeInTopLeft",
+    enterActive: "animate__slideInDown",
     exit: "animate__animated",
-    exitActive: "animate__fadeOutRight",
+    exitActive: "animate__fadeOut",
   };
 
   return (
-    <div className="App" id={theme}>
+    <div className="App" data-theme={theme}>
       <ErrorBoundary>
         <TransitionGroup component={null}>
           <CSSTransition
             key={location.key}
-            timeout={400}
+            timeout={500}
             classNames={transitionClasses}
           >
             <Routes location={location}>
