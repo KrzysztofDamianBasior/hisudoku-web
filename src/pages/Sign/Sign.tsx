@@ -1,8 +1,40 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
+import classNames from "classnames";
+import SignUpForm from "../../components/SignUpForm/SignUpForm";
+import SignInForm from "../../components/SignInForm/SignInForm";
 
-export default function SignIn() {
-  return <Link to="/">Home</Link>;
+export default function Sign() {
+  const [active, setActive] = useState(false);
+
+  return (
+    <div className={classNames("sign", { active: active })}>
+      <div className="sign__container">
+        <div className="sign__background">
+          <div className="sign__box sign__signin">
+            <h2>Already Have An Account ?</h2>
+            <button className="signinBtn" onClick={() => setActive(false)}>
+              Sign in
+            </button>
+          </div>
+          <div className="sign__box sign__signup">
+            <h2>Don't Have an Account?</h2>
+            <button className="signupBtn" onClick={() => setActive(true)}>
+              Sign up
+            </button>
+          </div>
+          <div className={classNames("sign__form", { active: active })}>
+            <div className="form signinForm">
+              <SignInForm />
+            </div>
+            <div className="form signupForm">
+              <SignUpForm />
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
 }
 
 // mutation name($variable: String!){
@@ -17,29 +49,3 @@ export default function SignIn() {
 //       //przekierowanie na inną stronę
 //   }
 // } )
-
-// tooltip    tippy.js-react
-// yarn add '@tiippy.js/react'
-
-// import Tippy from '@tippy.js/react'
-// import 'tippy.js/dist/tippy.css'
-
-//     <Tippy arrow={false} delay={1000} placement='right' content="content on button hover">
-//         <button>Hover</button>
-//     </Tippy>
-
-// content prop accepts html and components
-// content={<span={{color: 'orange'}}>Colored</span>}
-// content={<ColoredTooltip></CooloredTooltip>}
-
-// CUSTOM CHILD
-// import {forwardRef} from 'react'
-// const CustomChild = forwardRef(
-//     (props,ref) => {
-//         return <div ref={ref}> </div>
-//     }
-//  )
-
-// <Tippy content={}>
-//     <CustomChild />
-// </Tippy>

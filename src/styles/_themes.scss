@@ -1,6 +1,13 @@
 .App[data-theme="light"] {
   --color-text: rgb(0, 0, 0);
   --color-background: rgb(255, 255, 255);
+  --primary-color: rgb(255, 255, 255);
+  --secondary-color: rgb(255, 255, 255);
+  --danger-color: rgb(255, 255, 255);
+  --success-color: rgb(255, 255, 255);
+  --warning-color: rgb(255, 255, 255);
+  --info-color: rgb(255, 255, 255);
+  --default-color: rgb(255, 255, 255);
 }
 
 .app[data-theme="dark"] {

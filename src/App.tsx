@@ -7,9 +7,10 @@ import Home from "./pages/Home/Home";
 import Sign from "././pages/Sign/Sign";
 import Game from "./pages/Game/Game";
 import Profile from "./pages/Profile/Profile";
-import Settings from "./pages/Settings/Settings";
-
-import ErrorBoundary from "./components/ErrorBoundary/ErrorBoundary";
+import Sudokus from "./pages/Sudokus/Sudokus";
+import Users from "./pages/Users/Users";
+import ErrorBoundary from "./pages/ErrorBoundary/ErrorBoundary";
+import NotFound from "./pages/NotFound/NotFound";
 
 import { useAppSelector } from "./hooks";
 import { RootState } from "./redux/store";
@@ -39,7 +40,9 @@ const App = () => {
               <Route path="/sign" element={<Sign />} />
               <Route path="/game" element={<Game />} />
               <Route path="/profile" element={<Profile />} />
-              <Route path="/settings" element={<Settings />} />
+              <Route path="/users" element={<Users />} />
+              <Route path="/sudokus" element={<Sudokus />} />
+              <Route path="*" element={<NotFound />} />
             </Routes>
           </CSSTransition>
         </TransitionGroup>

@@ -1,5 +1,4 @@
 @forward "./About/about";
-@forward "./ErrorBoundary/errorBoundary";
 @forward "./FallingStars/fallingStars";
 @forward "./GameCreator/gameCreator";
 @forward "./HomeBanner/homeBanner";
@@ -10,3 +9,9 @@
 @forward "./ToggleThemeSwitch/toggleThemeSwitch";
 @forward "./AccountDashboard/accountDashboard";
 @forward "./Waves/waves";
+@forward "./SudokuBoard/sudokuBoard";
+@forward "./SudokuCell/sudokuCell";
+@forward "./SudokuToolset/sudokuToolset";
+@forward "./ForgetPasswordModal/forgetPasswordModal";
+@forward "./SignInForm/signInForm";
+@forward "./SignUpForm/signUpForm";
