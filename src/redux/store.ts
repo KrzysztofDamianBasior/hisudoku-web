@@ -1,5 +1,8 @@
 import { configureStore } from '@reduxjs/toolkit'
 import themeReducer from './slices/themeSlice'
+import settingsReducer from './slices/settingsSlice'
+import gamesHistoryReducer from './slices/gamesHistorySlice';
+import currentGameReducer from './slices/currentGameSlice';
 
 import storage from 'redux-persist/lib/storage';
 import { combineReducers } from 'redux';
@@ -8,6 +11,9 @@ import thunk from 'redux-thunk';
 
 const reducers = combineReducers({
   appTheme: themeReducer,
+  appSettings: settingsReducer,
+  appHistory: gamesHistoryReducer,
+  appCurrentGame: currentGameReducer
 });
 
 const persistConfig = {
