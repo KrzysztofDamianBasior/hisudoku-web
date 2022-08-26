@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import classNames from "classnames";
 import Logo from "../../assets/icon.png";
 import ToggleThemeSwitch from "../ToggleThemeSwitch/ToggleThemeSwitch";
+import SettingsModal from "../SettingsModal/SettingsModal";
 import {
   BsArrowRightCircle,
   BsSearch,
@@ -14,9 +15,13 @@ import { Link } from "react-router-dom";
 
 const SideBar = () => {
   const [close, setClose] = useState(true);
+  const [settingsModalOpen, setSettingsModalOpen] = useState(false);
 
   return (
     <nav className={classNames("sidebar", { close: close })}>
+      {settingsModalOpen && (
+        <SettingsModal setOpenModal={setSettingsModalOpen} />
+      )}
       <header>
         <div className="sidebar__banner">
           <span className="sidebar__image">
@@ -69,12 +74,18 @@ const SideBar = () => {
             </li>
 
             <li className="nav-link">
-              <Link className="sidebar__link" to="/">
+              <a
+                className="sidebar__link"
+                href="#"
+                onClick={() => {
+                  setSettingsModalOpen(true);
+                }}
+              >
                 <span className="icon">
                   <BsTools />
                 </span>
                 <span className="text nav-text">Settings</span>
-              </Link>
+              </a>
             </li>
 
             <li className="nav-link">

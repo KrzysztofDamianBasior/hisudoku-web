@@ -1,6 +1,6 @@
 @use "../../styles/breakpoints";
 
-.toggle-switch {
+.toggle-theme-switch {
   @media screen and (max-width: breakpoints.$max-tablet) {
     transform: scale(0.8);
   }
@@ -99,10 +99,10 @@
     transition: all 0.3s ease-in 0s;
   }
   &-checkbox:checked + &-label {
-    .toggle-switch-inner {
+    .toggle-theme-switch-inner {
       margin-left: 0;
     }
-    .toggle-switch-switch {
+    .toggle-theme-switch-switch {
       right: 0px;
     }
   }

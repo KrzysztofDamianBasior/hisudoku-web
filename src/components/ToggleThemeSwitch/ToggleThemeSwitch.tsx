@@ -39,10 +39,10 @@ const ToggleThemeSwitch = (props: Props) => {
   const optionLabels = ["light", "dark"];
 
   return (
-    <div className="toggle-switch">
+    <div className="toggle-theme-switch">
       <input
         type="checkbox"
-        className="toggle-switch-checkbox"
+        className="toggle-theme-switch-checkbox"
         checked={checked}
         onChange={(e) => setChecked((prev) => !prev)}
         name={props.name}
@@ -50,7 +50,7 @@ const ToggleThemeSwitch = (props: Props) => {
         disabled={disabled}
       />
       <label
-        className="toggle-switch-label"
+        className="toggle-theme-switch-label"
         htmlFor={props.name}
         tabIndex={disabled ? -1 : 1}
         onKeyDown={(e) => handleKeyPress(e)}
@@ -58,8 +58,8 @@ const ToggleThemeSwitch = (props: Props) => {
         <span
           className={
             disabled
-              ? "toggle-switch-inner toggle-switch-disabled"
-              : "toggle-switch-inner"
+              ? "toggle-theme-switch-inner toggle-theme-switch-disabled"
+              : "toggle-theme-switch-inner"
           }
           data-yes={optionLabels[0]}
           data-no={optionLabels[1]}
@@ -68,8 +68,8 @@ const ToggleThemeSwitch = (props: Props) => {
         <span
           className={
             disabled
-              ? "toggle-switch-switch toggle-switch-disabled"
-              : "toggle-switch-switch"
+              ? "toggle-theme-switch-switch toggle-theme-switch-disabled"
+              : "toggle-theme-switch-switch"
           }
           tabIndex={-1}
         >

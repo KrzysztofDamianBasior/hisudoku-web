@@ -1,15 +1,16 @@
-import { createSlice } from '@reduxjs/toolkit'
-import type { PayloadAction } from '@reduxjs/toolkit'
-import {CurrentGameState} from "./currentGameSlice"
+import { createSlice } from "@reduxjs/toolkit";
+import type { PayloadAction } from "@reduxjs/toolkit";
+import { CurrentGameState } from "./currentGameSlice";
 
 export interface GamesHistoryState {
-    history: CurrentGameState[]
+  history: CurrentGameState[];
 }
 
 const initialState: GamesHistoryState = {
-    history: [{
-    info: {origin: "initial", creationDate: "initial"},
-    board: [
+  history: [
+    {
+      info: { origin: "initial", creationDate: "initial" },
+      board: [
         [5, 3, 0, 0, 7, 0, 0, 0, 0],
         [6, 0, 0, 1, 9, 5, 0, 0, 0],
         [0, 9, 8, 0, 0, 0, 0, 6, 0],
@@ -20,26 +21,27 @@ const initialState: GamesHistoryState = {
         [0, 0, 0, 4, 1, 9, 0, 0, 5],
         [0, 0, 0, 0, 8, 0, 0, 7, 9],
       ],
-      moves: []
-    }]
-}
+      moves: [],
+    },
+  ],
+};
 
 export const appGamesHistorySlice = createSlice({
-  name: 'appGamesHistorySlice',
+  name: "appGamesHistorySlice",
   initialState,
   reducers: {
-    add:  (state, action: PayloadAction<CurrentGameState>) => {
-        state.history.push(action.payload)
+    add: (state, action: PayloadAction<CurrentGameState>) => {
+      state.history.push(action.payload);
     },
-    pop:  (state) => {
-        state.history.pop()
+    pop: (state) => {
+      state.history.pop();
     },
     clear: (state) => {
-        state.history = []
+      state.history = [];
     },
   },
-})
+});
 
-export const { add, pop, clear } = appGamesHistorySlice.actions
+export const { add, pop, clear } = appGamesHistorySlice.actions;
 
-export default appGamesHistorySlice.reducer
+export default appGamesHistorySlice.reducer;
