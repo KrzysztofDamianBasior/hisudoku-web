@@ -60,22 +60,34 @@
 $circle-radius: 100px;
 
 .deg0 {
-  transform: translate(150px);
+  transform: translate($circle-radius);
 } /* 12em = half the width of the wrapper */
 .deg45 {
   transform: rotate(45deg) translate($circle-radius) rotate(-45deg);
 }
+.deg60 {
+  transform: rotate(60deg) translate($circle-radius) rotate(-60deg);
+}
 .deg90 {
   transform: rotate(90deg) translate($circle-radius) rotate(-90deg);
+}
+.deg120 {
+  transform: rotate(120deg) translate($circle-radius) rotate(-120deg);
 }
 .deg135 {
   transform: rotate(135deg) translate($circle-radius) rotate(-135deg);
 }
 .deg180 {
-  transform: translate(-150px);
+  transform: translate(-100px);
 }
 .deg225 {
   transform: rotate(225deg) translate($circle-radius) rotate(-225deg);
+}
+.deg240 {
+  transform: rotate(240deg) translate($circle-radius) rotate(-240deg);
+}
+.deg300 {
+  transform: rotate(300deg) translate($circle-radius) rotate(-300deg);
 }
 .deg315 {
   transform: rotate(315deg) translate($circle-radius) rotate(-315deg);

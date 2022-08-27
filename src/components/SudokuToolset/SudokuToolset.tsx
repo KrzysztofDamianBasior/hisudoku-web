@@ -1,14 +1,14 @@
 import React, { useState } from "react";
 import classNames from "classnames";
 import {
-  AiOutlineLike,
-  AiFillLike,
   AiOutlineClear,
   AiOutlinePlusCircle,
   AiOutlineMinusCircle,
 } from "react-icons/ai";
 import { BsUiChecksGrid, BsShare } from "react-icons/bs";
 import { ImSortNumbericDesc } from "react-icons/im"; //solve
+import { BiReset, BiStopwatch } from "react-icons/bi";
+import Tippy from "@tippyjs/react";
 
 type Props = {};
 
@@ -31,52 +31,83 @@ const SudokuToolset = (props: Props) => {
           )}
         </div>
 
-        <div
-          className={classNames("sudoku-toolset__border", {
-            "sudoku-toolset__closed": !opened,
-            deg0: opened,
-          })}
-        >
-          <BsUiChecksGrid className="icon-border" />
-          {/* validate */}
-        </div>
+        <Tippy arrow={false} delay={500} content="validate">
+          <button>
+            <div
+              className={classNames("sudoku-toolset__border", {
+                "sudoku-toolset__closed": !opened,
+                deg0: opened,
+              })}
+            >
+              <BsUiChecksGrid className="icon-border" />
+            </div>
+          </button>
+        </Tippy>
 
-        <div
-          className={classNames("sudoku-toolset__border", {
-            "sudoku-toolset__closed": !opened,
-            deg225: opened,
-          })}
-        >
-          <BsShare className="icon-border" />
-          {/* share */}
-        </div>
-        <div
-          className={classNames("sudoku-toolset__border", {
-            "sudoku-toolset__closed": !opened,
-            deg315: opened,
-          })}
-        >
-          <ImSortNumbericDesc className="icon-border" />
-          {/* solve */}
-        </div>
-        <div
-          className={classNames("sudoku-toolset__border", {
-            "sudoku-toolset__closed": !opened,
-            deg180: opened,
-          })}
-        >
-          <AiOutlineClear className="icon-border" />
-          {/* clear */}
-        </div>
+        <Tippy arrow={false} delay={500} content="share">
+          <button>
+            <div
+              className={classNames("sudoku-toolset__border", {
+                "sudoku-toolset__closed": !opened,
+                deg60: opened,
+              })}
+            >
+              <BsShare className="icon-border" />
+            </div>
+          </button>
+        </Tippy>
 
-        <div
-          className={classNames("sudoku-toolset__border", {
-            "sudoku-toolset__closed": !opened,
-            deg90: opened,
-          })}
-        >
-          <AiOutlineLike className="icon-border" />5
-        </div>
+        <Tippy arrow={false} delay={500} content="solve">
+          <button>
+            <div
+              className={classNames("sudoku-toolset__border", {
+                "sudoku-toolset__closed": !opened,
+                deg120: opened,
+              })}
+            >
+              <ImSortNumbericDesc className="icon-border" />
+            </div>
+          </button>
+        </Tippy>
+
+        <Tippy arrow={false} delay={500} content="clear">
+          <button>
+            <div
+              className={classNames("sudoku-toolset__border", {
+                "sudoku-toolset__closed": !opened,
+                deg180: opened,
+              })}
+            >
+              <AiOutlineClear className="icon-border" />
+            </div>
+          </button>
+        </Tippy>
+
+        <Tippy arrow={false} delay={500} content="reset timer">
+          <button>
+            <div
+              className={classNames("sudoku-toolset__border", {
+                "sudoku-toolset__closed": !opened,
+                deg240: opened,
+              })}
+            >
+              <BiReset className="icon-border" />
+            </div>
+          </button>
+        </Tippy>
+
+        <Tippy arrow={false} delay={500} content="stop timer">
+          <button>
+            <div
+              className={classNames("sudoku-toolset__border", {
+                "sudoku-toolset__closed": !opened,
+                deg300: opened,
+              })}
+            >
+              <BiStopwatch className="icon-border" />
+            </div>
+          </button>
+        </Tippy>
       </div>
     </div>
   );
