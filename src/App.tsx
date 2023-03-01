@@ -3,6 +3,7 @@ import logo from "./logo.svg";
 
 import { Routes, Route, useLocation, Link } from "react-router-dom";
 import { CSSTransition, TransitionGroup } from "react-transition-group";
+import ToggleThemeSwitch from "./shared/components/ToggleThemeSwitch/ToggleThemeSwitch";
 
 function App() {
   const location = useLocation();
@@ -39,10 +40,15 @@ export default App;
 const StaticComponent = () => {
   return (
     <div className="App">
+      <ToggleThemeSwitch
+        id="home-banner__toggle-theme-switch-id"
+        disabled={true}
+      />
       <h1>it is header</h1>
       <a>it is a link</a>
       <blockquote>it is a blockquote</blockquote>
       <div className="lead">it is a lead</div>
+      <p>select me</p>
       <Link to={"/"}>Home</Link>
       <Link to={"/auth"}>Auth</Link>
       <header className="App-header">
