@@ -39,6 +39,10 @@ export default App;
 const StaticComponent = () => {
   return (
     <div className="App">
+      <h1>it is header</h1>
+      <a>it is a link</a>
+      <blockquote>it is a blockquote</blockquote>
+      <div className="lead">it is a lead</div>
       <Link to={"/"}>Home</Link>
       <Link to={"/auth"}>Auth</Link>
       <header className="App-header">
