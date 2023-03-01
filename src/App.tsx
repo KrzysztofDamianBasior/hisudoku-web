@@ -4,6 +4,7 @@ import logo from "./logo.svg";
 import { Routes, Route, useLocation, Link } from "react-router-dom";
 import { CSSTransition, TransitionGroup } from "react-transition-group";
 import ToggleThemeSwitch from "./shared/components/ToggleThemeSwitch/ToggleThemeSwitch";
+import Home from "./pages/Home";
 
 function App() {
   const location = useLocation();
@@ -23,7 +24,7 @@ function App() {
         classNames={transitionClasses}
       >
         <Routes location={location}>
-          <Route path="/" element={<StaticComponent />} />
+          <Route path="/" element={<Home />} />
           <Route path="/auth" element={<StaticComponent />} />
           <Route path="/game" element={<StaticComponent />} />
           <Route path="/profile" element={<StaticComponent />} />

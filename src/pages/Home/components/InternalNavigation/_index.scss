@@ -1,0 +1,28 @@
+.internal-navigation__icon {
+  position: fixed;
+  z-index: 100;
+  cursor: pointer;
+  font-size: 10vh;
+  display: block;
+  width: 45px;
+  height: 45px;
+  color: black;
+  background: transparent;
+}
+
+.internal-navigation__bottom {
+  right: 50%;
+  bottom: 8%;
+}
+.internal-navigation__top {
+  top: 5%;
+  right: 50%;
+}
+.internal-navigation__right {
+  top: 50%;
+  right: 5%;
+}
+.internal-navigation__left {
+  top: 50%;
+  left: 5%;
+}

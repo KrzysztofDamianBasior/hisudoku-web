@@ -1,0 +1,39 @@
+.home {
+  width: 200%;
+  height: 200%;
+  display: flex;
+  flex-direction: column;
+  flex: none;
+
+  header,
+  main {
+    display: flex;
+    flex-direction: row;
+    flex: none;
+    justify-content: center;
+    align-items: center;
+    width: 200vw;
+    height: 100vh;
+
+    .home__banner,
+    .home__account-dashboard,
+    .home__game-creator,
+    .home__about {
+      display: flex;
+      flex: none;
+      justify-content: center;
+      align-items: center;
+      width: 100vw;
+      height: 100vh;
+    }
+  }
+}
+
+// .home {
+//   background-color: rgba(87, 93, 151, 1);
+//   background-image: linear-gradient(
+//     101deg,
+//     rgba(87, 93, 151, 1) 0%,
+//     rgba(0, 0, 0, 1) 72%
+//   );
+// }
