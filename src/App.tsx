@@ -1,10 +1,8 @@
-import React from "react";
-import logo from "./logo.svg";
-
-import { Routes, Route, useLocation, Link } from "react-router-dom";
+import { Routes, Route, useLocation } from "react-router-dom";
 import { CSSTransition, TransitionGroup } from "react-transition-group";
-import ToggleThemeSwitch from "./shared/components/ToggleThemeSwitch/ToggleThemeSwitch";
+
 import Home from "./pages/Home";
+import Auth from "./pages/Auth";
 
 function App() {
   const location = useLocation();
@@ -25,11 +23,11 @@ function App() {
       >
         <Routes location={location}>
           <Route path="/" element={<Home />} />
-          <Route path="/auth" element={<StaticComponent />} />
-          <Route path="/game" element={<StaticComponent />} />
+          <Route path="/auth" element={<Auth />} />
+          {/* <Route path="/game" element={<StaticComponent />} />
           <Route path="/profile" element={<StaticComponent />} />
           <Route path="/sudokus" element={<StaticComponent />} />
-          {/* <Route path="*" element={<StaticComponent />} /> */}
+          <Route path="*" element={<StaticComponent />} /> */}
         </Routes>
       </CSSTransition>
     </TransitionGroup>
@@ -37,35 +35,3 @@ function App() {
 }
 
 export default App;
-
-const StaticComponent = () => {
-  return (
-    <div className="App">
-      <ToggleThemeSwitch
-        id="home-banner__toggle-theme-switch-id"
-        disabled={true}
-      />
-      <h1>it is header</h1>
-      <a>it is a link</a>
-      <blockquote>it is a blockquote</blockquote>
-      <div className="lead">it is a lead</div>
-      <p>select me</p>
-      <Link to={"/"}>Home</Link>
-      <Link to={"/auth"}>Auth</Link>
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-};

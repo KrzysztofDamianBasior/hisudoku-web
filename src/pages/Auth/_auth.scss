@@ -1,0 +1,126 @@
+@use "../../shared/styles/breakpoints";
+
+.sign {
+  height: 100vh;
+  width: 100vw;
+  transition: all 0.5s ease-in;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  &__container {
+    position: relative;
+    width: 60vw;
+    height: 500px;
+    margin: 20px;
+    background: #ff0;
+    @media (max-width: breakpoints.$min-laptop-width) {
+      max-width: 400px;
+      height: 650px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+  }
+  &__background {
+    position: absolute;
+    top: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 420px;
+    background: rgba(255, 255, 255, 0.2);
+    box-shadow: 0 5px 45px rgba(0, 0, 0, 0.1);
+    @media (max-width: breakpoints.$min-laptop-width) {
+      top: 0;
+      height: 100%;
+    }
+  }
+  &__box {
+    position: relative;
+    width: 50%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    @media (max-width: breakpoints.$min-laptop-width) {
+      position: absolute;
+      width: 100%;
+      height: 150px;
+      bottom: 0;
+      &.sign__signin {
+        top: 0;
+      }
+    }
+    h2 {
+      color: #fff;
+      font-size: 1.2em;
+      font-weight: 500;
+      margin-bottom: 10px;
+    }
+    button {
+      cursor: pointer;
+      padding: 10px 20px;
+      background: #fff;
+      color: #333;
+      font-size: 16px;
+      font-weight: 500;
+      border: none;
+    }
+  }
+  &__form {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 50%;
+    height: 100%;
+    background: #fff;
+    z-index: 500;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 5px 45px rgba(0, 0, 0, 0.25);
+    transition: 0.5s ease-in-out;
+    overflow: hidden;
+    // overflow: scroll;
+
+    @media (max-width: 991px) {
+      width: 100%;
+      height: 500px;
+      top: 0;
+      box-shadow: none;
+    }
+
+    &.active {
+      left: 50%;
+      @media (max-width: 991px) {
+        left: 0;
+        top: 150px;
+      }
+      .signinForm {
+        left: -100%;
+        transition-delay: 0s;
+      }
+      .signupForm {
+        left: 0 !important;
+        transition-delay: 0.25s;
+      }
+    }
+    .signinForm {
+      left: 0;
+      transition-delay: 0.25s;
+    }
+    .signupForm {
+      transition-delay: 0s;
+      left: 100% !important;
+    }
+    .form {
+      position: absolute;
+      left: 0;
+      width: 100%;
+      transition: 0.5s;
+    }
+  }
+}
