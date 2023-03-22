@@ -9,6 +9,7 @@ import { BsUiChecksGrid, BsShare } from "react-icons/bs";
 import { ImSortNumbericDesc } from "react-icons/im"; //solve
 import { BiReset, BiStopwatch } from "react-icons/bi";
 import Tippy from "@tippyjs/react";
+import "./index.scss";
 
 type Props = {};
 

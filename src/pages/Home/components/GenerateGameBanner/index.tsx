@@ -1,5 +1,7 @@
 import React from "react";
 import ActionButton from "../../../../shared/components/ActionButton";
+import "./index.scss";
+
 type Props = {};
 
 const GameCreator = (props: Props) => {

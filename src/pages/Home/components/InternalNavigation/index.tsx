@@ -10,6 +10,7 @@ import {
   ScrollButtonsControls,
   VisibleButtonsUnion,
 } from "../../hooks/useScrollButtons";
+import "./index.scss";
 
 type Props = {
   scrollButtons: ScrollButtonsControls;

@@ -51,7 +51,7 @@
   }
 }
 
-$circle-radius: 100px;
+$circle-radius: 60px;
 
 .deg0 {
   transform: translate($circle-radius);
@@ -72,7 +72,7 @@ $circle-radius: 100px;
   transform: rotate(135deg) translate($circle-radius) rotate(-135deg);
 }
 .deg180 {
-  transform: translate(-100px);
+  transform: translate(-60px);
 }
 .deg225 {
   transform: rotate(225deg) translate($circle-radius) rotate(-225deg);

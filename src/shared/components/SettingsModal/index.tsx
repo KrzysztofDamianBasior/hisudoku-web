@@ -10,6 +10,7 @@ import {
 } from "../../redux/slices/settingsSlice";
 import { RootState } from "../../redux/store";
 import { useAppSelector, useAppDispatch } from "../../hooks";
+import "./index.scss";
 
 type Props = { setOpenModal: (arg0: boolean) => void };
 

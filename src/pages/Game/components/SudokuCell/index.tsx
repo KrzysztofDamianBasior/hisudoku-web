@@ -1,4 +1,4 @@
-import React from "react";
+import "./index.scss";
 
 type Props = { row: number; col: number };
 

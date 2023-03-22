@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import SignUpForm from "./components/SignUpForm";
 import SignInForm from "./components/SignInForm";
 import WavyBackground from "../../shared/components/WavyBackground";
+import "./index.scss";
 
 export default function Sign() {
   const [active, setActive] = useState(true);

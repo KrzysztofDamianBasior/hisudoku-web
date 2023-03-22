@@ -1,5 +1,6 @@
 import React from "react";
 import { AiOutlineClose } from "react-icons/ai";
+import "./index.scss";
 
 type Props = { setOpenModal: (arg0: boolean) => void };
 

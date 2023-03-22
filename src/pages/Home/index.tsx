@@ -10,6 +10,8 @@ import HomeBanner from "./components/HomeBanner";
 import AccountDashboard from "./components/AuthBanner";
 import GeometricBackground from "../../shared/components/GeometricBackground";
 
+import "./index.scss";
+
 export default function Home() {
   const scrollButtons: ScrollButtonsControls = useScrollButtons();
 

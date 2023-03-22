@@ -1,6 +1,7 @@
 import React from "react";
 import Logo from "../../../../shared/assets/icon.png";
 import ToggleThemeSwitch from "../../../../shared/components/ToggleThemeSwitch/ToggleThemeSwitch";
+import "./index.scss";
 
 const HomeBanner = () => {
   return (

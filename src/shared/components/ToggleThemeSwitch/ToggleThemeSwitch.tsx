@@ -9,6 +9,7 @@ import {
 import { RootState } from "../../redux/store";
 import { useAppSelector } from "../../hooks";
 import { useDispatch } from "react-redux";
+import "./index.scss";
 
 type Props = {
   id?: string;

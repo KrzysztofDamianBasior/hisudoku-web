@@ -1,4 +1,5 @@
 import KeyboardButton from "../KeyboardButton";
+import "./index.scss";
 
 const SudokuKeyboard = () => {
   return (

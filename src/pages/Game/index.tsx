@@ -4,6 +4,8 @@ import SudokuToolset from "./components/SudokuToolset";
 import Timer from "./components/Timer";
 import SudokuKeyboard from "./components/SudokuKeyboard";
 
+import "./index.scss";
+
 const Game = () => {
   return (
     <div className="game" style={{ height: "100%" }}>

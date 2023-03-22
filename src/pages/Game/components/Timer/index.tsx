@@ -1,4 +1,5 @@
 import React, { useEffect, useRef, useState } from "react";
+import "./index.scss";
 
 const Timer = () => {
   const [time, setTime] = useState<{

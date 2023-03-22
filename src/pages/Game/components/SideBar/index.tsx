@@ -12,6 +12,7 @@ import {
 import { BiHome, BiHistory, BiPencil, BiUser } from "react-icons/bi";
 import { AiOutlineRobot, AiOutlineUnorderedList } from "react-icons/ai";
 import { Link } from "react-router-dom";
+import "./index.scss";
 
 const SideBar = () => {
   const [close, setClose] = useState(true);

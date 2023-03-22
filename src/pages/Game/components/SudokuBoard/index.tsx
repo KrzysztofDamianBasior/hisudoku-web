@@ -10,6 +10,8 @@ import { RootState } from "../../../../shared/redux/store";
 import { useAppSelector, useAppDispatch } from "../../../../shared/hooks";
 import SudokuCell from "../SudokuCell";
 
+import "./index.scss";
+
 type Props = {};
 
 const initial = [
