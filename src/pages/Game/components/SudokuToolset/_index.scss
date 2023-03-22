@@ -1,0 +1,88 @@
+@use "../../../../shared/styles/mixins.scss";
+
+.sudoku-toolset {
+  position: relative;
+  width: 50px;
+  height: 50px;
+
+  color: white;
+  border: dashed 1px;
+  border-radius: 50%;
+
+  @include mixins.flex-column-center;
+
+  &__center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    width: 50px;
+    height: 50px;
+
+    font-size: 25px;
+    z-index: 100;
+    .icon-center {
+      display: block;
+      height: 100%;
+      width: 100%;
+    }
+  }
+
+  &__item {
+    display: block;
+    position: absolute;
+    border-radius: 50%;
+    top: 50%;
+    left: 50%;
+    width: 4em;
+    height: 4em;
+    margin: -2em;
+    background-color: steelblue;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all 1s linear;
+    &--closed {
+      opacity: 0;
+    }
+    .icon-border {
+      width: 100%;
+    }
+  }
+}
+
+$circle-radius: 100px;
+
+.deg0 {
+  transform: translate($circle-radius);
+}
+.deg45 {
+  transform: rotate(45deg) translate($circle-radius) rotate(-45deg);
+}
+.deg60 {
+  transform: rotate(60deg) translate($circle-radius) rotate(-60deg);
+}
+.deg90 {
+  transform: rotate(90deg) translate($circle-radius) rotate(-90deg);
+}
+.deg120 {
+  transform: rotate(120deg) translate($circle-radius) rotate(-120deg);
+}
+.deg135 {
+  transform: rotate(135deg) translate($circle-radius) rotate(-135deg);
+}
+.deg180 {
+  transform: translate(-100px);
+}
+.deg225 {
+  transform: rotate(225deg) translate($circle-radius) rotate(-225deg);
+}
+.deg240 {
+  transform: rotate(240deg) translate($circle-radius) rotate(-240deg);
+}
+.deg300 {
+  transform: rotate(300deg) translate($circle-radius) rotate(-300deg);
+}
+.deg315 {
+  transform: rotate(315deg) translate($circle-radius) rotate(-315deg);
+}

@@ -3,6 +3,7 @@ import { CSSTransition, TransitionGroup } from "react-transition-group";
 
 import Home from "./pages/Home";
 import Auth from "./pages/Auth";
+import Game from "./pages/Game";
 
 function App() {
   const location = useLocation();
@@ -24,10 +25,10 @@ function App() {
         <Routes location={location}>
           <Route path="/" element={<Home />} />
           <Route path="/auth" element={<Auth />} />
-          {/* <Route path="/game" element={<StaticComponent />} />
-          <Route path="/profile" element={<StaticComponent />} />
-          <Route path="/sudokus" element={<StaticComponent />} />
-          <Route path="*" element={<StaticComponent />} /> */}
+          <Route path="/game" element={<Game />} />
+          {/* <Route path="/profile" element={<Profile />} />
+          <Route path="/sudokus" element={<SudokusList />} />
+          <Route path="*" element={<NotFound />} /> */}
         </Routes>
       </CSSTransition>
     </TransitionGroup>

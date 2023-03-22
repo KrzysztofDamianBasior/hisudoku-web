@@ -1,0 +1,122 @@
+@use "../../../../shared/styles/breakpoints";
+@use "../../../../shared/styles/mixins.scss";
+
+.sidebar {
+  position: absolute;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 250px;
+  padding: 10px 5px;
+  background: #242526;
+  transition: all 0.3s ease;
+
+  &.close {
+    width: 70px;
+    .toggle {
+      transform: translateY(-50%) rotate(0deg);
+    }
+    .text {
+      opacity: 0;
+    }
+    input {
+      opacity: 0;
+    }
+    .toogle-theme-switch {
+      opacity: 0;
+    }
+  }
+  .toogle-theme-switch {
+    @include mixins.flex-column-center;
+  }
+
+  &__header {
+    position: relative;
+    .toggle {
+      position: absolute;
+      top: 50%;
+      right: -25px;
+      transform: translateY(-50%) rotate(180deg);
+      height: 25px;
+      width: 25px;
+      background-color: #3a3b3c;
+      color: var(#242526);
+      border-radius: 50%;
+      @include mixins.flex-column-center;
+      font-size: 22px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+    .sidebar__banner {
+      @include mixins.flex-column-center;
+    }
+    .logo-text {
+      font-size: 18px;
+      font-weight: 600;
+    }
+    .sidebar__image {
+      @include mixins.flex-column-center;
+      img {
+        width: 40px;
+        border-radius: 6px;
+      }
+    }
+  }
+
+  &__menu-bar {
+    display: flex;
+    flex-direction: column;
+    height: 80%;
+
+    justify-content: space-between;
+    margin-top: 20px;
+  }
+
+  .sidebar__image,
+  .icon {
+    @include mixins.flex-column-center;
+    min-width: 60px;
+    border-radius: 10px;
+    height: 100%;
+    font-size: 20px;
+  }
+  .text,
+  .icon {
+    color: #ccc;
+    transition: all 0.3s ease;
+  }
+  .text {
+    font-size: 17px;
+    font-weight: 500;
+    white-space: nowrap;
+    opacity: 1;
+  }
+
+  li {
+    @include mixins.flex-row-center;
+    list-style: none;
+    margin-top: 10px;
+    cursor: pointer;
+
+    .sidebar__link {
+      min-height: 6vh;
+      list-style: none;
+      background-color: transparent;
+      display: flex;
+      align-items: center;
+      height: 100%;
+      width: 100%;
+      border-radius: 6px;
+      text-decoration: none;
+      transition: all 0.3s ease;
+    }
+    .sidebar__link:hover {
+      background-color: #3a3b3c;
+      .icon,
+      .text {
+        color: #242526;
+      }
+    }
+  }
+}

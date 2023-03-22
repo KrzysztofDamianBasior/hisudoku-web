@@ -1,0 +1,11 @@
+.sudoku-board {
+  border-collapse: collapse;
+  border: 3px solid bisque;
+  background-color: bisque;
+  .bBorder {
+    border-bottom: 2px solid black;
+  }
+  .rBorder {
+    border-right: 2px solid black;
+  }
+}

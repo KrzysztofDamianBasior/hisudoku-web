@@ -1,0 +1,32 @@
+@use "../../../../shared/styles/mixins.scss";
+
+.timer {
+  @include mixins.flex-row-center;
+  color: white;
+
+  &__item {
+    @include mixins.flex-column-center;
+    position: relative;
+    width: 100px;
+    height: 100px;
+    color: white;
+    font-size: 40px;
+    line-height: 30px;
+    margin: 10px;
+    padding-top: 10px;
+    span {
+      color: white;
+      font-size: 12px;
+      text-transform: uppercase;
+    }
+  }
+}
+
+.countdown-svg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100px;
+  height: 100px;
+  color: white;
+}
