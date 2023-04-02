@@ -16,22 +16,22 @@ function App() {
   };
 
   return (
-    <TransitionGroup component={null}>
-      <CSSTransition
-        key={location.key}
-        timeout={50000}
-        classNames={transitionClasses}
-      >
-        <Routes location={location}>
-          <Route path="/" element={<Home />} />
-          <Route path="/auth" element={<Auth />} />
-          <Route path="/game" element={<Game />} />
-          {/* <Route path="/profile" element={<Profile />} />
+    // <TransitionGroup component={null}>
+    //   <CSSTransition
+    //     key={location.key}
+    //     timeout={50000}
+    //     classNames={transitionClasses}
+    //   >
+    <Routes>
+      <Route path="/" element={<Home />} />
+      <Route path="/auth" element={<Auth />} />
+      <Route path="/game" element={<Game />} />
+      {/* <Route path="/profile" element={<Profile />} />
           <Route path="/sudokus" element={<SudokusList />} />
           <Route path="*" element={<NotFound />} /> */}
-        </Routes>
-      </CSSTransition>
-    </TransitionGroup>
+    </Routes>
+    //  {/* </CSSTransition>
+    // </TransitionGroup> */}
   );
 }
 

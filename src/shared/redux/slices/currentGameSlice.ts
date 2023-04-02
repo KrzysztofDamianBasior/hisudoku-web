@@ -1,15 +1,15 @@
 import { createSlice } from "@reduxjs/toolkit";
 import type { PayloadAction } from "@reduxjs/toolkit";
 
-export type ValidSudokuValue = 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9;
+export type SudokuValue = 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9;
 export type Move = {
-  sudokuValue: ValidSudokuValue;
-  notes: ValidSudokuValue[];
+  sudokuValue: SudokuValue;
+  notes: SudokuValue[];
 }[][];
-export type Board = ValidSudokuValue[][];
+export type SudokuBoard = SudokuValue[][];
 
 export interface CurrentGameState {
-  board: Board;
+  board: SudokuBoard;
   moves: Move[];
   info: { origin: string; creationDate: string };
 }
@@ -142,8 +142,8 @@ export const appCurrentGameSlice = createSlice({
     undoMove: (state) => {
       state.moves.pop();
     },
-    newGame: (state, action: PayloadAction<Board>) => {
-      const board: Board = action.payload;
+    newGame: (state, action: PayloadAction<SudokuBoard>) => {
+      const board: SudokuBoard = action.payload;
       const firstMove: Move = [[], [], [], [], [], [], [], [], []];
 
       board.forEach((row, rowIndex) => {
