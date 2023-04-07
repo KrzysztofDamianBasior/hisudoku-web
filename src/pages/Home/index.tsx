@@ -11,6 +11,7 @@ import AccountDashboard from "./components/AuthBanner";
 import GeometricBackground from "../../shared/components/GeometricBackground";
 
 import "./index.scss";
+import AnimatedPage from "../../shared/components/AnimatedPage";
 
 export default function Home() {
   const scrollButtons: ScrollButtonsControls = useScrollButtons();
@@ -23,30 +24,28 @@ export default function Home() {
   } = scrollButtons;
 
   return (
-    <div className="home">
-      <InternalNavigation scrollButtons={scrollButtons} />
-      <header>
-        <div ref={setRefsTopLeft} className="home__banner">
-          <GeometricBackground>
-            <HomeBanner />
-          </GeometricBackground>
+    <AnimatedPage>
+      <GeometricBackground>
+        <div className="home">
+          <InternalNavigation scrollButtons={scrollButtons} />
+          <div className="home__wrapper">
+            <div className="home__top">
+              <div ref={setRefsTopLeft} className="home__banner">
+                <HomeBanner />
+              </div>
+              <div ref={setRefsTopRight} className="home__account-dashboard">
+                <AccountDashboard />
+              </div>
+            </div>
+            <div className="home__bottom">
+              <div ref={setRefsBottomLeft} className="home__game-creator">
+                <GameCreator />
+              </div>
+              <div ref={setRefsBottomRight} className="home__about"></div>
+            </div>
+          </div>
         </div>
-        <div ref={setRefsTopRight} className="home__account-dashboard">
-          <GeometricBackground>
-            <AccountDashboard />
-          </GeometricBackground>
-        </div>
-      </header>
-      <main>
-        <div ref={setRefsBottomLeft} className="home__game-creator">
-          <GeometricBackground>
-            <GameCreator />
-          </GeometricBackground>
-        </div>
-        <div ref={setRefsBottomRight} className="home__about">
-          <GeometricBackground>{/* <About /> */}</GeometricBackground>
-        </div>
-      </main>
-    </div>
+      </GeometricBackground>
+    </AnimatedPage>
   );
 }

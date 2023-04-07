@@ -1,28 +1,89 @@
-.internal-navigation__icon {
-  position: fixed;
-  z-index: 100;
+@use "../../../../shared/styles/mixins.scss";
+
+.internal-navigation__button {
   cursor: pointer;
-  font-size: 10vh;
+  // position: fixed;
+  position: absolute;
+  z-index: 100;
   display: block;
-  width: 45px;
-  height: 45px;
   color: black;
   background: transparent;
+  &:hover {
+    animation-name: shake;
+    animation-duration: 1s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+  }
+}
+
+.internal-navigation__icon {
+  display: block;
+  padding: 0;
+  margin: 0;
+  width: 60px;
+  height: 60px;
 }
 
 .internal-navigation__bottom {
   right: 50%;
-  bottom: 8%;
+  bottom: 3%;
 }
 .internal-navigation__top {
-  top: 5%;
+  top: 0%;
   right: 50%;
 }
 .internal-navigation__right {
   top: 50%;
-  right: 5%;
+  right: 2%;
+  //   display: block;
+  //   animation: fade-in 1s;
 }
 .internal-navigation__left {
   top: 50%;
-  left: 5%;
+  left: 1%;
+  //   display: block;
+  //   animation: fade-in 1s;
+}
+
+@media only screen and (hover: none) and (pointer: coarse) {
+  .internal-navigation__icon {
+    display: none;
+  }
+}
+
+@keyframes shake {
+  0% {
+    transform: translate(0, 0) rotate(0deg);
+  }
+  25% {
+    transform: translate(5px, 5px) rotate(5deg);
+  }
+  50% {
+    transform: translate(0, 0) rotate(0eg);
+  }
+  75% {
+    transform: translate(-5px, 5px) rotate(-5deg);
+  }
+  100% {
+    transform: translate(0, 0) rotate(0deg);
+  }
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fade-out {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
 }

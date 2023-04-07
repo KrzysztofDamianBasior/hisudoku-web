@@ -9,7 +9,7 @@
 // 0 0 0 0 0 0 9 6 2
 // 0 0 0 0 0 0 1 4 5
 
-import { SudokuBoard, SudokuValue } from "../redux/slices/currentGameSlice";
+import { SudokuBoard, SudokuValue } from "../../redux/slices/currentGameSlice";
 
 /* Randomize array in-place using Durstenfeld shuffle algorithm */
 function shuffleArray({ arr }: { arr: SudokuValue[] }): SudokuValue[] {

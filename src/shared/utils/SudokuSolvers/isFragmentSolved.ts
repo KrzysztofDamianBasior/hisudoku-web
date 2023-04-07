@@ -1,4 +1,4 @@
-import { SudokuValue } from "../redux/slices/currentGameSlice";
+import { SudokuValue } from "../../redux/slices/currentGameSlice";
 
 export const isFragmentSolved = ({
   sudokuValuesArray,

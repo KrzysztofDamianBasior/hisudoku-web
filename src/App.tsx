@@ -1,37 +1,36 @@
-import { Routes, Route, useLocation } from "react-router-dom";
-import { CSSTransition, TransitionGroup } from "react-transition-group";
-
-import Home from "./pages/Home";
-import Auth from "./pages/Auth";
-import Game from "./pages/Game";
+import { ThemeProvider, createTheme } from "@mui/material";
+import { useAppSelector } from "./shared/hooks";
+import { RootState } from "./shared/redux/store";
+import AnimatedRoutes from "./AnimatedRoutes";
+import { CssBaseline } from "@mui/material/";
 
 function App() {
-  const location = useLocation();
-
-  const transitionClasses = {
-    enter: "animate__animated",
-    enterActive: "animate__fadeIn",
-    exit: "animate__animated",
-    exitActive: "animate__fadeOut",
-  };
+  const theme = useAppSelector((state: RootState) => state.appTheme.theme);
+  console.log(theme);
+  const themeOptions = createTheme({
+    palette: {
+      mode: theme === "light" ? "light" : "dark",
+      primary: {
+        main: "#1978a5",
+        light: "#1fbfb8",
+        dark: "#05716c",
+      },
+      secondary: {
+        main: "#EEE8A9",
+        light: "#f9f5cb",
+        dark: "#8a865b",
+      },
+      info: {
+        main: "#9C5C82",
+      },
+    },
+  });
 
   return (
-    // <TransitionGroup component={null}>
-    //   <CSSTransition
-    //     key={location.key}
-    //     timeout={50000}
-    //     classNames={transitionClasses}
-    //   >
-    <Routes>
-      <Route path="/" element={<Home />} />
-      <Route path="/auth" element={<Auth />} />
-      <Route path="/game" element={<Game />} />
-      {/* <Route path="/profile" element={<Profile />} />
-          <Route path="/sudokus" element={<SudokusList />} />
-          <Route path="*" element={<NotFound />} /> */}
-    </Routes>
-    //  {/* </CSSTransition>
-    // </TransitionGroup> */}
+    <ThemeProvider theme={themeOptions}>
+      <CssBaseline />
+      <AnimatedRoutes />
+    </ThemeProvider>
   );
 }
 

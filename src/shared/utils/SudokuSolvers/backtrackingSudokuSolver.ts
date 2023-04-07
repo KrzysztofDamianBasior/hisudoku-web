@@ -1,4 +1,4 @@
-import { SudokuBoard, SudokuValue } from "../redux/slices/currentGameSlice";
+import { SudokuBoard, SudokuValue } from "../../redux/slices/currentGameSlice";
 
 function isSudokuValueValid({
   sudokuBoard,

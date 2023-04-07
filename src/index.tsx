@@ -5,7 +5,6 @@ import reportWebVitals from "./reportWebVitals";
 import { BrowserRouter } from "react-router-dom";
 
 import "./shared/styles/index.scss";
-import "animate.css";
 
 import { persistStore } from "redux-persist";
 import { store } from "./shared/redux/store";

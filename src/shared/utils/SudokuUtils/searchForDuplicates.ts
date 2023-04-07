@@ -1,4 +1,4 @@
-import { SudokuBoard } from "../redux/slices/currentGameSlice";
+import { SudokuBoard } from "../../redux/slices/currentGameSlice";
 
 export const searchForDuplicates = ({
   sudokuBoard,

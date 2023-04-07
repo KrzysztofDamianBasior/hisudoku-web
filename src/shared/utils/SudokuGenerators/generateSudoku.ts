@@ -1,6 +1,6 @@
 //inspired by https://javascript.plainenglish.io/building-a-sudoku-puzzle-generator-d55cead9656d
 
-import { SudokuBoard, SudokuValue } from "../redux/slices/currentGameSlice";
+import { SudokuBoard, SudokuValue } from "../../redux/slices/currentGameSlice";
 
 const easyPuzzles: SudokuBoard[] = [
   [

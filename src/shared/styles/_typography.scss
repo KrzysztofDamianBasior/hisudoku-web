@@ -1,32 +1,20 @@
 /* 
     Google Font Import 
-    Alegreya weights: 400, 400 italic, 500
-    Poppins weights: 100, 100 italic, 200, 200 italic, 300, 300 italic
-
-      font-family: "Alegreya", serif;
-      font-family: "Poppins", sans-serif;
+    Alegreya weights: 400, 400 italic, 700, 700 italic
+    
+    font-family: "Alegreya", serif;
 */
-@import url("https://fonts.googleapis.com/css2?family=Alegreya:ital,wght@0,400;0,500;1,400&family=Poppins:ital,wght@0,100;0,200;0,300;1,100;1,200;1,300&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Alegreya:ital,wght@0,400;0,700;1,400;1,700&display=swap");
 
 :root {
-  --ff-body: "Poppins", sans-serif;
-  --ff-heading: "Poppins", sans-serif;
+  --ff-body: "Alegreya", serif;
+  --ff-heading: "Alegreya", serif;
   --ff-sudoku: "Alegreya", serif;
-
-  --clr-primary-400: hsl(60 100% 50%);
-  --clr-neutral-900: hsl(0 0% 0%);
-  --clr-neutral-100: hsl(0 0% 100%);
 
   --fs-xl: clamp(3.5rem, 12vw + 1rem, 12rem);
   --fs-600: 2rem;
   --fs-500: 1.25rem;
   --fs-400: 1rem;
-}
-
-::selection {
-  color: red;
-  background-color: yellow;
-  font-weight: bold;
 }
 
 @media (min-width: 40em) {
@@ -37,11 +25,6 @@
   }
 }
 
-// img {
-//   display: block;
-//   max-width: 100%;
-// }
-
 body {
   font-family: var(--ff-body);
   font-size: var(--fs-400);
@@ -51,32 +34,12 @@ body {
 h1,
 blockquote {
   font-family: var(--ff-heading);
-  font-weight: 900;
+  // font-weight: 900;
 }
 
 h1 {
   font-size: var(--fs-xl);
   line-height: 1;
-  // text-transform: uppercase;
-}
-
-blockquote {
-  font-size: var(--fs-600);
-  line-height: 1.2;
-  text-align: center;
-  margin-bottom: 1em;
-}
-
-blockquote::before {
-  content: open-quote;
-}
-
-blockquote::after {
-  content: close-quote;
-}
-
-a {
-  font-weight: 700;
 }
 
 .lead {

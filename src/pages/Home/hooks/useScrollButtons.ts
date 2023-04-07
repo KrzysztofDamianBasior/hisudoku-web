@@ -1,7 +1,7 @@
 import { useState, useEffect, useRef, useCallback } from "react";
 import { useInView } from "react-intersection-observer";
 
-export type VisibleButtonsUnion = "tr" | "tl" | "br" | "bl";
+export type VisibleButtonsUnion = "tr" | "tl" | "br" | "bl" | "none";
 
 export type ScrollButtonsControls = {
   visibleButtons: VisibleButtonsUnion;
@@ -16,7 +16,7 @@ export type ScrollButtonsControls = {
 };
 
 export const useScrollButtons = (
-  threshold: number = 0.2
+  threshold: number = 0.5
 ): ScrollButtonsControls => {
   const { ref: topLeftRef, inView: topLeftInView } = useInView({ threshold });
   const { ref: bottomLeftRef, inView: bottomLeftInView } = useInView({
@@ -81,6 +81,14 @@ export const useScrollButtons = (
     }
     if (bottomRightInView) {
       setVisibleButtons("tl");
+    }
+    if (
+      topLeftInView &&
+      bottomLeftInView &&
+      topRightInView &&
+      bottomRightInView
+    ) {
+      setVisibleButtons("none");
     }
   }, [topLeftInView, topRightInView, bottomLeftInView, bottomRightInView]);
 
