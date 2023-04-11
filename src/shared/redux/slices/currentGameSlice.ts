@@ -11,11 +11,11 @@ export type SudokuBoard = SudokuValue[][];
 export interface CurrentGameState {
   board: SudokuBoard;
   moves: Move[];
-  info: { origin: string; creationDate: string };
+  info: { author: string; creationDate: string };
 }
 
 const initialState: CurrentGameState = {
-  info: { origin: "initial", creationDate: "initial" },
+  info: { author: "initial", creationDate: "initial" },
   board: [
     [5, 3, 0, 0, 7, 0, 0, 0, 0],
     [6, 0, 0, 1, 9, 5, 0, 0, 0],

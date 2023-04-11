@@ -1,11 +1,11 @@
 import React, { useState } from "react";
-import {
-  setTimer,
-  setRegionHighlighting,
-  setRowColumnHighlighting,
-  setPreventMistakes,
-  setAutoRemoveNotes,
-} from "../../../../shared/redux/slices/settingsSlice";
+// import {
+//   setTimer,
+//   setRegionHighlighting,
+//   setRowColumnHighlighting,
+//   setPreventMistakes,
+//   setAutoRemoveNotes,
+// } from "../../../../shared/redux/slices/gameSettingsSlice";
 import { RootState } from "../../../../shared/redux/store";
 import { useAppSelector, useAppDispatch } from "../../../../shared/hooks";
 import SudokuCell from "../SudokuCell";
@@ -29,19 +29,19 @@ const initial = [
 const SudokuBoard = (props: Props) => {
   const [sudokuArr, setSudokuArr] = useState(initial);
 
-  const timer = useAppSelector((state: RootState) => state.appSettings.timer);
-  const preventMistakes = useAppSelector(
-    (state: RootState) => state.appSettings.preventMistakes
-  );
-  const autoRemoveNotes = useAppSelector(
-    (state: RootState) => state.appSettings.autoRemoveNotes
-  );
-  const rowColumnHighlighting = useAppSelector(
-    (state: RootState) => state.appSettings.rowColumnHighlighting
-  );
-  const regionHighlighting = useAppSelector(
-    (state: RootState) => state.appSettings.regionHighlighting
-  );
+  // const timer = useAppSelector((state: RootState) => state.appSettings.timer);
+  // const preventMistakes = useAppSelector(
+  //   (state: RootState) => state.appSettings.preventMistakes
+  // );
+  // const autoRemoveNotes = useAppSelector(
+  //   (state: RootState) => state.appSettings.autoRemoveNotes
+  // );
+  // const rowColumnHighlighting = useAppSelector(
+  //   (state: RootState) => state.appSettings.rowColumnHighlighting
+  // );
+  // const regionHighlighting = useAppSelector(
+  //   (state: RootState) => state.appSettings.regionHighlighting
+  // );
 
   return (
     <table className="sudoku-board">

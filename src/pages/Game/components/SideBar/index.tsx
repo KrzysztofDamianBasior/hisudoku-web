@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import classNames from "classnames";
 import Logo from "../../../../shared/assets/icon.png";
 import ToggleThemeSwitch from "../../../../shared/components/ToggleThemeSwitch/ToggleThemeSwitch";
-import SettingsModal from "../../../../shared/components/SettingsModal";
+// import SettingsModal from "../../../../shared/components/SettingsModal";
 import {
   BsArrowRightCircle,
   BsSearch,
@@ -11,18 +11,23 @@ import {
 } from "react-icons/bs";
 import { BiHome, BiHistory, BiPencil, BiUser } from "react-icons/bi";
 import { AiOutlineRobot, AiOutlineUnorderedList } from "react-icons/ai";
+import {
+  closeGameSettingsDialog,
+  openGameSettingsDialog,
+} from "../../../../shared/redux/slices/dialogsSlice";
+import { useAppDispatch, useAppSelector } from "../../../../shared/hooks";
 import { Link } from "react-router-dom";
 import "./index.scss";
 
 const SideBar = () => {
   const [close, setClose] = useState(true);
-  const [settingsModalOpen, setSettingsModalOpen] = useState(false);
+  const dispatch = useAppDispatch();
+
+  // const [settingsModalOpen, setSettingsModalOpen] = useState(false);
 
   return (
     <nav className={classNames("sidebar", { close: close })}>
-      {settingsModalOpen && (
-        <SettingsModal setOpenModal={setSettingsModalOpen} />
-      )}
+      {/* {settingsModalOpen && <SettingsModal />} */}
 
       <div className="sidebar__header">
         <div className="sidebar__banner">
@@ -78,7 +83,8 @@ const SideBar = () => {
           <li
             className="nav-link"
             onClick={() => {
-              setSettingsModalOpen(true);
+              // setSettingsModalOpen(true);
+              dispatch(openGameSettingsDialog());
             }}
           >
             <div className="sidebar__link">

@@ -1,8 +1,11 @@
 import { configureStore } from "@reduxjs/toolkit";
+
 import themeReducer from "./slices/themeSlice";
-import settingsReducer from "./slices/settingsSlice";
+import gameSettingsReducer from "./slices/gameSettingsSlice";
 import gameHistoryReducer from "./slices/gameHistorySlice";
 import currentGameReducer from "./slices/currentGameSlice";
+import dialogsReducer from "./slices/dialogsSlice";
+import snackbarsReducer from "./slices/snackbarsSlice";
 
 import storage from "redux-persist/lib/storage";
 import { combineReducers } from "redux";
@@ -11,15 +14,17 @@ import thunk from "redux-thunk";
 
 const reducers = combineReducers({
   appTheme: themeReducer,
-  appSettings: settingsReducer,
+  appGameSettings: gameSettingsReducer,
   appHistory: gameHistoryReducer,
   appCurrentGame: currentGameReducer,
+  appDialogs: dialogsReducer,
+  appSnackbars: snackbarsReducer,
 });
 
 const persistConfig = {
   key: "root",
   storage,
-  whitelist: ["appTheme"],
+  blacklist: ["appDialogs", "appSnackbars"],
 };
 
 const persistedReducer = persistReducer(persistConfig, reducers);
