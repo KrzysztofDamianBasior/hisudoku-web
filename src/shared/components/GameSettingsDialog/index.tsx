@@ -1,4 +1,4 @@
-import * as React from "react";
+import React, { useState } from "react";
 
 import {
   setAutoRemoveNotes,
@@ -12,6 +12,7 @@ import {
   openGameSettingsDialog,
 } from "../../redux/slices/dialogsSlice";
 import { RootState } from "../../redux/store";
+import { openGameSettingsChangedSnackbar } from "../../redux/slices/snackbarsSlice";
 
 import ToggleSwitch from "../ToggleSwitch";
 
@@ -30,6 +31,9 @@ import { TransitionProps } from "@mui/material/transitions";
 import "./index.scss";
 
 const GameSettingsDialog = () => {
+  const [hasGameSettingsChanged, setHasGameSettingsChanged] =
+    useState<boolean>(false);
+
   const isDialogOpened: boolean = useAppSelector(
     (state: RootState) => state.appDialogs.isGameSettingsDialogOpened
   );
@@ -58,6 +62,10 @@ const GameSettingsDialog = () => {
 
   const handleClose = () => {
     dispatch(closeGameSettingsDialog());
+    if (hasGameSettingsChanged) {
+      dispatch(openGameSettingsChangedSnackbar());
+      setHasGameSettingsChanged(false);
+    }
   };
 
   return (
@@ -83,6 +91,7 @@ const GameSettingsDialog = () => {
               isChecked={isTimerVisible}
               callback={(isChecked: boolean) => {
                 dispatch(setTimerVisiblity(isChecked));
+                setHasGameSettingsChanged(true);
               }}
             />
           </div>
@@ -92,6 +101,7 @@ const GameSettingsDialog = () => {
               isChecked={isRegionHighlightingVisible}
               callback={(isChecked: boolean) => {
                 dispatch(setRegionHighlightingVisiblity(isChecked));
+                setHasGameSettingsChanged(true);
               }}
             />
           </div>
@@ -101,6 +111,7 @@ const GameSettingsDialog = () => {
               isChecked={isRowColumnHighlightingVisible}
               callback={(isChecked: boolean) => {
                 dispatch(setRowColumnHighlightingVisiblity(isChecked));
+                setHasGameSettingsChanged(true);
               }}
             />
           </div>
@@ -110,6 +121,7 @@ const GameSettingsDialog = () => {
               isChecked={autoPreventMistakes}
               callback={(isChecked: boolean) => {
                 dispatch(setAutoPreventMistakes(isChecked));
+                setHasGameSettingsChanged(true);
               }}
             />
           </div>
@@ -119,6 +131,7 @@ const GameSettingsDialog = () => {
               isChecked={autoRemoveNotes}
               callback={(isChecked: boolean) => {
                 dispatch(setAutoRemoveNotes(isChecked));
+                setHasGameSettingsChanged(true);
               }}
             />
           </div>
@@ -126,9 +139,9 @@ const GameSettingsDialog = () => {
       </DialogContent>
 
       <DialogActions>
-        <Button variant="outlined" onClick={handleClose}>
+        {/* <Button variant="outlined" onClick={handleClose}>
           Cancel
-        </Button>
+        </Button> */}
         <Button variant="outlined" autoFocus onClick={handleClose}>
           Continue
         </Button>

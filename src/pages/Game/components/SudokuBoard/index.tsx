@@ -12,6 +12,15 @@ import SudokuCell from "../SudokuCell";
 
 import "./index.scss";
 
+// <motion.button
+// whileHover={{ scale: 1.1 }}
+// whileTap={{ scale: 0.9 }}
+// className="confirmaton-button"
+// onClick={() => null}
+// >
+// {text}
+// </motion.button>
+
 type Props = {};
 
 const initial = [
