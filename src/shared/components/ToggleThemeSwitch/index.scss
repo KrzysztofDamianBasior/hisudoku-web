@@ -25,15 +25,6 @@
     border: 0 solid #bbb;
     border-radius: 20px;
     margin: 0;
-    &:focus {
-      outline: none;
-      > span {
-        box-shadow: 0 0 2px 5px red;
-      }
-    }
-    > span:focus {
-      outline: none;
-    }
   }
   &-inner {
     display: block;
@@ -49,7 +40,7 @@
       padding: 0;
       line-height: 34px;
       font-size: 14px;
-      color: white;
+      // color: white;
       font-weight: bold;
       box-sizing: border-box;
     }
@@ -61,7 +52,7 @@
       text-transform: uppercase;
       padding-left: 10px;
       background-color: #f90;
-      color: #fff;
+      color: #000000;
     }
   }
   &-disabled {
@@ -74,13 +65,14 @@
   }
   &-inner:after {
     content: attr(data-no);
+    // color: #000000;
     @media screen and (max-width: breakpoints.$max-tablet-width) {
       content: "";
     }
     text-transform: uppercase;
     padding-right: 10px;
     background-color: #bbb;
-    color: #fff;
+    // color: #fff;
     text-align: right;
   }
   &-switch {
@@ -89,7 +81,8 @@
     align-items: center;
     width: 24px;
     margin: 5px;
-    background: #fff;
+    background: #ffffff;
+    color: black;
     position: absolute;
     top: 0;
     bottom: 0;

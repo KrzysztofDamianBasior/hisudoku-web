@@ -9,6 +9,10 @@ import {
 import { RootState } from "../../redux/store";
 import { useAppSelector } from "../../hooks";
 import { useDispatch } from "react-redux";
+
+import LightModeIcon from "@mui/icons-material/LightMode";
+import DarkModeIcon from "@mui/icons-material/DarkMode";
+
 import "./index.scss";
 
 type Props = {
@@ -80,7 +84,8 @@ const ToggleThemeSwitch = ({
           }
           tabIndex={-1}
         >
-          {checked ? <RiSunFill /> : <BsFillMoonStarsFill />}
+          {/* {checked ? <RiSunFill /> : <BsFillMoonStarsFill />} */}
+          {checked ? <LightModeIcon /> : <DarkModeIcon />}
         </span>
       </label>
     </div>

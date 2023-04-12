@@ -12,6 +12,7 @@ import GeometricBackground from "../../shared/components/GeometricBackground";
 
 import "./index.scss";
 import AnimatedPage from "../../shared/components/AnimatedPage";
+import CheckMoreBanner from "./components/CheckMoreBanner";
 
 export default function Home() {
   const scrollButtons: ScrollButtonsControls = useScrollButtons();
@@ -41,7 +42,9 @@ export default function Home() {
               <div ref={setRefsBottomLeft} className="home__game-creator">
                 <GameCreator />
               </div>
-              <div ref={setRefsBottomRight} className="home__about"></div>
+              <div ref={setRefsBottomRight} className="home__about">
+                <CheckMoreBanner />
+              </div>
             </div>
           </div>
         </div>

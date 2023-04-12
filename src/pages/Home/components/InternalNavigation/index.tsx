@@ -1,9 +1,15 @@
-import {
-  HiOutlineArrowSmRight,
-  HiOutlineArrowSmLeft,
-  HiOutlineArrowSmUp,
-  HiOutlineArrowSmDown,
-} from "react-icons/hi";
+// import {
+//   HiOutlineArrowSmRight,
+//   HiOutlineArrowSmLeft,
+//   HiOutlineArrowSmUp,
+//   HiOutlineArrowSmDown,
+// } from "react-icons/hi";
+
+import KeyboardArrowRightIcon from "@mui/icons-material/KeyboardArrowRight";
+import KeyboardArrowLeftIcon from "@mui/icons-material/KeyboardArrowLeft";
+import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
+import KeyboardArrowUpIcon from "@mui/icons-material/KeyboardArrowUp";
+
 import {
   ScrollButtonsControls,
   VisibleButtonsUnion,
@@ -81,7 +87,8 @@ export default function InternalNavigation({ scrollButtons }: Props) {
             scrollToSection("b");
           }}
         >
-          <HiOutlineArrowSmDown className="internal-navigation__icon" />
+          {/* <HiOutlineArrowSmDown className="internal-navigation__icon" /> */}
+          <KeyboardArrowDownIcon sx={{ width: "80px", height: "80px" }} />
         </motion.button>
       )}
       {visibleButtons.includes("l") && (
@@ -98,7 +105,8 @@ export default function InternalNavigation({ scrollButtons }: Props) {
             scrollToSection("l");
           }}
         >
-          <HiOutlineArrowSmLeft className="internal-navigation__icon" />
+          {/* <HiOutlineArrowSmLeft className="internal-navigation__icon" /> */}
+          <KeyboardArrowLeftIcon sx={{ width: "80px", height: "80px" }} />
         </motion.button>
       )}
       {visibleButtons.includes("r") && (
@@ -115,7 +123,8 @@ export default function InternalNavigation({ scrollButtons }: Props) {
             scrollToSection("r");
           }}
         >
-          <HiOutlineArrowSmRight className="internal-navigation__icon" />
+          {/* <HiOutlineArrowSmRight className="internal-navigation__icon" /> */}
+          <KeyboardArrowRightIcon sx={{ width: "80px", height: "80px" }} />
         </motion.button>
       )}
       {visibleButtons.includes("t") && (
@@ -132,7 +141,8 @@ export default function InternalNavigation({ scrollButtons }: Props) {
             scrollToSection("t");
           }}
         >
-          <HiOutlineArrowSmUp className="internal-navigation__icon" />
+          {/* <HiOutlineArrowSmUp className="internal-navigation__icon" /> */}
+          <KeyboardArrowUpIcon sx={{ width: "80px", height: "80px" }} />
         </motion.button>
       )}
     </AnimatePresence>
