@@ -28,6 +28,7 @@ const CheckMoreBanner = () => {
         display="block"
         align="center"
         gutterBottom={true}
+        sx={{ my: "20px" }}
       >
         Web application to play and share sudokus
       </Typography>

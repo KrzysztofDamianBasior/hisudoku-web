@@ -6,14 +6,14 @@ import { CssBaseline } from "@mui/material/";
 import Dialogs from "./Dialogs";
 import Snackbars from "./Snackbars";
 
-// import { Typography, makeStyles } from "@mui/material";\
+// import { Typography, makeStyles } from "@mui/material";
 // import { styled } from "@mui/material/styles";
 // import { useTheme } from "@mui/material/styles";
 // const theme = useTheme();
 
 function App() {
   const theme = useAppSelector((state: RootState) => state.appTheme.theme);
-  console.log(theme);
+
   const themeOptions = createTheme({
     palette: {
       mode: theme === "light" ? "light" : "dark",
@@ -51,6 +51,52 @@ function App() {
 }
 
 export default App;
+
+// <Box
+// sx={{
+//   color: "success.dark",
+//   color: "text.primary",
+//   color: "text.secondary",
+//   bgcolor: 'background.paper',
+//   bgcolor: "background.paper",
+//   borderColor: 'primary.main',
+//   boxShadow: 1,
+//   borderRadius: 2,
+//   mx: 0.5,
+//   margin: 2,
+//   p: 2,
+//   minWidth: 300,
+//   width: 1/2,
+//   display: "inline",
+//   fontSize: 14,
+//   fontWeight: "bold",
+//   fontWeight: "medium",
+//   fontWeight: 'fontWeightLight',
+//   typography: 'body1',
+//   height: (theme) => theme.spacing(10),
+//   '&:hover': {
+//     color: 'red',
+//     backgroundColor: 'white',
+//   },
+//   "& > :not(style)": {
+//     m: 1,
+//     width: 128,
+//     height: 128,
+//   },
+// }}
+// sx={[
+//   { mr: 2, color: 'red' },
+//   (theme) => ({
+//     '&:hover': {
+//       color: theme.palette.primary.main,
+//     },
+//   }),
+// ]}
+// sx={(theme) => ({
+//   ...theme.typography.body,
+//   color: theme.palette.primary.main,
+// })}
+// ></Box>
 
 ///////////////////////////////////////////////////////////////////////
 //     <motion.div

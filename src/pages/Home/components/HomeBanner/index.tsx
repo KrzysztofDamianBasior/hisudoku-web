@@ -4,15 +4,17 @@ import ToggleThemeSwitch from "../../../../shared/components/ToggleThemeSwitch/T
 import "./index.scss";
 import HomeBlockquoteGroup from "../HomeBlockquoteGroup";
 
+import { Typography } from "@mui/material";
+
 const HomeBanner = () => {
   return (
     <div className="home-banner">
-      <div className="home-banner__content-bearer">
-        <h1 className="home-banner__title">HiSudoku</h1>
-        {/* <img src={Logo} alt="logo" className="home-banner__logo" /> */}
-        <HomeBlockquoteGroup />
+      <h1 className="home-banner__title">HiSudoku</h1>
+      <HomeBlockquoteGroup />
+
+      <Typography variant="h4" sx={{ my: "50px" }}>
         scroll the page to reveal more
-      </div>
+      </Typography>
       <div className="home-banner__toggle-switch">
         <ToggleThemeSwitch id="home-banner__toggle-theme-switch-name" />
       </div>

@@ -8,7 +8,7 @@
 
 :root {
   --ff: "Alegreya", serif;
-  
+
   --fw-neutral: 400;
   --fw-distinguish: 700;
 
@@ -64,7 +64,6 @@ blockquote {
   font-size: var(--fs-600);
   line-height: 1.2;
   text-align: center;
-  margin-bottom: 1em;
 }
 
 blockquote::before {
