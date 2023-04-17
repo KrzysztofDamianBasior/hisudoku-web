@@ -1,27 +1,54 @@
+import Box from "@mui/material/Box";
+
 import SideBar from "./components/SideBar";
 import SudokuBoard from "./components/SudokuBoard";
 import SudokuToolset from "./components/SudokuToolset";
 import Timer from "./components/Timer";
 import SudokuKeyboard from "./components/SudokuKeyboard";
 
-import "./index.scss";
 import AnimatedPage from "../../shared/components/AnimatedPage";
 
 const Game = () => {
   return (
     <AnimatedPage>
-      <div className="game" style={{ height: "100%" }}>
+      <Box
+        sx={{
+          width: "100%",
+          height: "100%",
+          display: "flex",
+          flexDirection: "row",
+          alignItems: "center",
+          justifyContent: "center",
+        }}
+      >
         <SideBar />
-        <div className="game__dashboard">
-          <div className="game__dashboard__header">
+        <Box
+          sx={{
+            marginRight: "50px",
+            display: "flex",
+            flexDirection: "column",
+            alignItems: "center",
+            justifyContent: "center",
+          }}
+        >
+          <Box
+            sx={{
+              display: "flex",
+              flexDirection: "row",
+              alignItems: "center",
+              justifyContent: "space-between",
+            }}
+          >
+            <Box sx={{}}>
+              <SudokuToolset />
+            </Box>
             <Timer />
-            <SudokuToolset />
-          </div>
+          </Box>
           <SudokuKeyboard />
-        </div>
+        </Box>
 
         <SudokuBoard />
-      </div>
+      </Box>
     </AnimatedPage>
   );
 };

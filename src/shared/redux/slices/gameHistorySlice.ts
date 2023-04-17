@@ -9,7 +9,7 @@ export interface GameHistoryState {
 const initialState: GameHistoryState = {
   history: [
     {
-      info: { author: "initial", creationDate: "initial" },
+      sudokuInfo: { author: "initial", creationDate: "initial" },
       board: [
         [5, 3, 0, 0, 7, 0, 0, 0, 0],
         [6, 0, 0, 1, 9, 5, 0, 0, 0],
@@ -22,6 +22,8 @@ const initialState: GameHistoryState = {
         [0, 0, 0, 0, 8, 0, 0, 7, 9],
       ],
       moves: [],
+      focusedCellPosition: null,
+      cellsNotes: new Array(9).fill(new Array(9).fill(new Array(9).fill(null))),
     },
   ],
 };

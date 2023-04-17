@@ -1,6 +1,6 @@
 import { SudokuBoard } from "../../redux/slices/currentGameSlice";
 
-export const extractColumnFromTheBoard = ({
+export const extractColumnFromTheSudokuBoard = ({
   sudokuBoard,
   columnNumber,
 }: {

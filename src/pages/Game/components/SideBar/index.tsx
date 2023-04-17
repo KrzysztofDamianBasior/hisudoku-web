@@ -18,6 +18,9 @@ import {
 import { useAppDispatch, useAppSelector } from "../../../../shared/hooks";
 import { Link } from "react-router-dom";
 import "./index.scss";
+import { Typography, makeStyles } from "@mui/material";
+import Box from "@mui/material/Box";
+import { useTheme, styled } from "@mui/material/styles";
 
 const SideBar = () => {
   const [close, setClose] = useState(true);
@@ -123,3 +126,37 @@ const SideBar = () => {
 };
 
 export default SideBar;
+
+// <Box
+// sx={{
+//   color: "success.dark",
+//   color: "text.primary",
+//   color: "text.secondary",
+//   bgcolor: 'background.paper',
+//   bgcolor: "background.paper",
+//   borderColor: 'primary.main',
+//   boxShadow: 1,
+//   borderRadius: 2,
+//   mx: 0.5,
+//   margin: 2,
+//   p: 2,
+//   minWidth: 300,
+//   width: 1/2,
+//   display: "inline",
+//   fontSize: 14,
+//   fontWeight: "bold",
+//   fontWeight: "medium",
+//   fontWeight: 'fontWeightLight',
+//   typography: 'body1',
+//   height: (theme) => theme.spacing(10),
+//   '&:hover': {
+//     color: 'red',
+//     backgroundColor: 'white',
+//   },
+//   "& > :not(style)": {
+//     m: 1,
+//     width: 128,
+//     height: 128,
+//   },
+// }}
+// ></Box>

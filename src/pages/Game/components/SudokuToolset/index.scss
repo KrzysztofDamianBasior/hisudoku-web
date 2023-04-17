@@ -2,10 +2,9 @@
 
 .sudoku-toolset {
   position: relative;
-  width: 50px;
-  height: 50px;
-
-  color: white;
+  width: 200px;
+  height: 200px;
+  margin: 10px;
   border: dashed 1px;
   border-radius: 50%;
 
@@ -42,6 +41,23 @@
     justify-content: center;
     align-items: center;
     transition: all 1s linear;
+
+    box-shadow: inset -25px -25px 40px rgba(0, 0, 0, 0.5);
+    background-image: linear-gradient(
+      -45deg,
+      rgba(255, 255, 220, 0.3) 0%,
+      transparent 100%
+    );
+
+    &:hover {
+      box-shadow: inset 0 0 50px #fff, /* inner white */ inset 20px 0 40px #f0f,
+        /* inner left magenta short */ inset -20px 0 40px #0ff,
+        /* inner right cyan short */ inset 20px 0 150px #f0f,
+        /* inner left magenta broad */ inset -20px 0 150px #0ff,
+        /* inner right cyan broad */ 0 0 25px #fff,
+        /* outer white */ -10px 0 40px #f0f,
+        /* outer left magenta */ 10px 0 40px #0ff; /* outer right cyan */
+    }
     &--closed {
       opacity: 0;
     }

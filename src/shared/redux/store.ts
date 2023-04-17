@@ -24,7 +24,7 @@ const reducers = combineReducers({
 const persistConfig = {
   key: "root",
   storage,
-  blacklist: ["appDialogs", "appSnackbars"],
+  blacklist: ["appDialogs", "appSnackbars", "appCurrentGame"],
 };
 
 const persistedReducer = persistReducer(persistConfig, reducers);

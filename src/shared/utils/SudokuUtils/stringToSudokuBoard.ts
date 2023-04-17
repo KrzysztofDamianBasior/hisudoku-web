@@ -1,4 +1,8 @@
-export function stringToBoard({ sudokuString }: { sudokuString: string }) {
+export function stringToSudokuBoard({
+  sudokuString,
+}: {
+  sudokuString: string;
+}) {
   const rows = sudokuString.split(";");
   const board: number[][] = [];
 

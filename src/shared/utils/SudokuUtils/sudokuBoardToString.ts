@@ -1,6 +1,6 @@
 import { SudokuBoard } from "../../redux/slices/currentGameSlice";
 
-export const boardToString = ({
+export const sudokuBoardToString = ({
   sudokuBoard,
 }: {
   sudokuBoard: SudokuBoard;

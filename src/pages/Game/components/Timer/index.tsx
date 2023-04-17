@@ -1,5 +1,5 @@
 import React, { useEffect, useRef, useState } from "react";
-import "./index.scss";
+import Box from "@mui/material/Box";
 
 const Timer = () => {
   const [time, setTime] = useState<{
@@ -31,9 +31,30 @@ const Timer = () => {
   }, []);
 
   return (
-    <div className="timer">
+    <Box
+      sx={{
+        display: "flex",
+        justifyContent: "center",
+        alignItems: "center",
+        flexDirection: "row",
+      }}
+    >
       {time.minutes !== 0 ? (
-        <div className="timer__item">
+        <Box
+          sx={{
+            display: "flex",
+            justifyContent: "center",
+            alignItems: "center",
+            flexDirection: "column",
+            position: "relative",
+            width: "100px",
+            height: "100px",
+            fontSize: "40px",
+            lineHeight: "30px",
+            margin: "10px",
+            paddingTop: "10px",
+          }}
+        >
           <SVGCircle
             radius={mapNumber({
               num: time.minutes,
@@ -44,11 +65,32 @@ const Timer = () => {
             })}
           />
           {time.minutes}
-          <span>minutes</span>
-        </div>
+          <Box
+            sx={{
+              fontSize: "12px",
+              textTransform: "uppercase",
+            }}
+          >
+            minutes
+          </Box>
+        </Box>
       ) : null}
       {time.seconds !== 0 ? (
-        <div className="timer__item">
+        <Box
+          sx={{
+            display: "flex",
+            justifyContent: "center",
+            alignItems: "center",
+            flexDirection: "column",
+            position: "relative",
+            width: "100px",
+            height: "100px",
+            fontSize: "40px",
+            lineHeight: "30px",
+            margin: "10px",
+            paddingTop: "10px",
+          }}
+        >
           <SVGCircle
             radius={mapNumber({
               num: time.seconds,
@@ -59,21 +101,36 @@ const Timer = () => {
             })}
           />
           {time.seconds}
-          <span>seconds</span>
-        </div>
+          <Box
+            sx={{
+              fontSize: "12px",
+              textTransform: "uppercase",
+            }}
+          >
+            seconds
+          </Box>
+        </Box>
       ) : null}
-    </div>
+    </Box>
   );
 };
 export default Timer;
 
 //https://www.florin-pop.com/blog/2019/05/countdown-built-with-react/
 const SVGCircle = ({ radius }: { radius: number }) => (
-  <svg className="countdown-svg">
+  <svg
+    style={{
+      position: "absolute",
+      top: 0,
+      left: 0,
+      width: "100px",
+      height: "100px",
+    }}
+  >
     <path
       fill="none"
       stroke="#333"
-      stroke-width="4"
+      strokeWidth="4"
       d={describeArc({
         x: 50,
         y: 50,

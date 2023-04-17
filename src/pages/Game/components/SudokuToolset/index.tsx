@@ -10,11 +10,14 @@ import { ImSortNumbericDesc } from "react-icons/im"; //solve
 import { BiReset, BiStopwatch } from "react-icons/bi";
 import Tippy from "@tippyjs/react";
 import "./index.scss";
+import { Typography, makeStyles } from "@mui/material";
+import Box from "@mui/material/Box";
+import { useTheme, styled } from "@mui/material/styles";
 
 type Props = {};
 
 const SudokuToolset = (props: Props) => {
-  const [opened, setOpened] = useState(false);
+  const [opened, setOpened] = useState(true);
 
   return (
     <div className="sudoku-toolset">

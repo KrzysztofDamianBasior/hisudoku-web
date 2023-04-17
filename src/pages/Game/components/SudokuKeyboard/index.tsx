@@ -1,52 +1,72 @@
+import type { SxProps } from "@mui/material";
+import Box from "@mui/material/Box";
+
 import KeyboardButton from "../KeyboardButton";
-import "./index.scss";
+
+const KeyboardElement: SxProps = {
+  margin: "10px",
+  width: "18%",
+  height: "100%",
+  display: "flex",
+  flexDirection: "row",
+  justifyContent: "center",
+  alignItems: "center",
+};
+const KeyboardTop: SxProps = {
+  width: "100%",
+  height: "30%",
+  display: "flex",
+  flexDirection: "row",
+  justifyContent: "space-around",
+};
+
+const KeyboardSection: SxProps = {
+  display: "flex",
+  flexDirection: "row",
+  justifyContent: "center",
+  alignItems: "center",
+  width: "100%",
+  height: "30%",
+};
 
 const SudokuKeyboard = () => {
   return (
-    <div className="sudoku-keyboard">
-      <div className="sudoku-keyboard__top">
-        <div className="sudoku-keyboard__element">
-          <KeyboardButton>notes</KeyboardButton>
-        </div>
-        <div className="sudoku-keyboard__element">
-          <KeyboardButton>undo</KeyboardButton>
-        </div>
-      </div>
-      <div className="sudoku-keyboard__section ">
-        <div className="sudoku-keyboard__element">
-          <KeyboardButton>1</KeyboardButton>
-        </div>
-        <div className="sudoku-keyboard__element">
-          <KeyboardButton>2</KeyboardButton>
-        </div>
-        <div className="sudoku-keyboard__element">
-          <KeyboardButton>3</KeyboardButton>
-        </div>
-        <div className="sudoku-keyboard__element">
-          <KeyboardButton>4</KeyboardButton>
-        </div>
-        <div className="sudoku-keyboard__element">
-          <KeyboardButton>5</KeyboardButton>
-        </div>
-      </div>
-      <div className="sudoku-keyboard__section">
-        <div className="sudoku-keyboard__element">
-          <KeyboardButton>6</KeyboardButton>
-        </div>
-        <div className="sudoku-keyboard__element">
-          <KeyboardButton>7</KeyboardButton>
-        </div>
-        <div className="sudoku-keyboard__element">
-          <KeyboardButton>8</KeyboardButton>
-        </div>
-        <div className="sudoku-keyboard__element">
-          <KeyboardButton>9</KeyboardButton>
-        </div>
-        <div className="sudoku-keyboard__element">
-          <KeyboardButton>erase</KeyboardButton>
-        </div>
-      </div>
-    </div>
+    <Box
+      sx={{
+        display: "flex",
+        flexDirection: "column",
+        justifyContent: "space-between",
+        alignItems: "space-between",
+        width: "500px",
+        height: "200px",
+      }}
+    >
+      <Box sx={KeyboardTop}>
+        <Box sx={KeyboardElement}>
+          <KeyboardButton mode="erase" value="notes" />
+        </Box>
+        <Box sx={KeyboardElement}>
+          <KeyboardButton mode="undo" value="undo" />
+        </Box>
+      </Box>
+      <Box sx={KeyboardSection}>
+        {[1, 2, 3, 4, 5].map((num) => (
+          <Box sx={KeyboardElement} key={num}>
+            <KeyboardButton mode="number" value={num} />
+          </Box>
+        ))}
+      </Box>
+      <Box sx={KeyboardSection}>
+        {[6, 7, 8, 9].map((num) => (
+          <Box sx={KeyboardElement} key={num}>
+            <KeyboardButton mode="number" value={num} />
+          </Box>
+        ))}
+        <Box sx={KeyboardElement}>
+          <KeyboardButton mode="erase" value="erase" />
+        </Box>
+      </Box>
+    </Box>
   );
 };
 export default SudokuKeyboard;
