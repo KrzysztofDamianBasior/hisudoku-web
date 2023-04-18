@@ -2,9 +2,9 @@ import * as React from "react";
 import Snackbar from "@mui/material/Snackbar";
 import MuiAlert, { AlertProps } from "@mui/material/Alert";
 import Slide, { SlideProps } from "@mui/material/Slide";
-import { useAppSelector, useAppDispatch } from "../../hooks";
-import { closeGameSettingsChangedSnackbar } from "../../redux/slices/snackbarsSlice";
-import { RootState } from "../../redux/store";
+import { useAppSelector, useAppDispatch } from "../../../hooks";
+import { closeGameSettingsChangedSnackbar } from "../../../redux/slices/snackbarsSlice";
+import { RootState } from "../../../redux/store";
 import AlertTitle from "@mui/material/AlertTitle";
 
 type TransitionProps = Omit<SlideProps, "direction">;

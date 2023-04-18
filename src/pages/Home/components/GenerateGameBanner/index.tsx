@@ -1,5 +1,5 @@
 import React from "react";
-import ActionButton from "../../../../shared/components/ActionButton";
+import ActionButton from "../../../../shared/components/inputs/ActionButton";
 import "./index.scss";
 
 type Props = {};

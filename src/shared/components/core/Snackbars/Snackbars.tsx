@@ -1,4 +1,4 @@
-import GameSettingsChangedSnackbar from "./shared/components/GameSettingsChangedSnackbar";
+import GameSettingsChangedSnackbar from "../../snackbars/GameSettingsChangedSnackbar";
 
 const Snackbars = () => {
   return (

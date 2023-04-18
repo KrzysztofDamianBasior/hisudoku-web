@@ -1,9 +1,9 @@
 import React from "react";
 import { Route, Routes, useLocation } from "react-router-dom";
 
-import Home from "./pages/Home";
-import Auth from "./pages/Auth";
-import Game from "./pages/Game";
+import Home from "../../../../pages/Home";
+import Auth from "../../../../pages/Auth";
+import Game from "../../../../pages/Game";
 
 import { AnimatePresence } from "framer-motion";
 

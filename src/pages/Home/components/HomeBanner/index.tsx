@@ -1,6 +1,6 @@
 import React from "react";
 import Logo from "../../../../shared/assets/icon.png";
-import ToggleThemeSwitch from "../../../../shared/components/ToggleThemeSwitch/ToggleThemeSwitch";
+import ToggleThemeSwitch from "../../../../shared/components/inputs/ToggleThemeSwitch/ToggleThemeSwitch";
 import "./index.scss";
 import HomeBlockquoteGroup from "../HomeBlockquoteGroup";
 

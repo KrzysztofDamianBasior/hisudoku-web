@@ -6,17 +6,17 @@ import {
   setRegionHighlightingVisiblity,
   setRowColumnHighlightingVisiblity,
   setTimerVisiblity,
-} from "../../redux/slices/gameSettingsSlice";
+} from "../../../redux/slices/gameSettingsSlice";
 import {
   closeGameSettingsDialog,
   openGameSettingsDialog,
-} from "../../redux/slices/dialogsSlice";
-import { RootState } from "../../redux/store";
-import { openGameSettingsChangedSnackbar } from "../../redux/slices/snackbarsSlice";
+} from "../../../redux/slices/dialogsSlice";
+import { RootState } from "../../../redux/store";
+import { openGameSettingsChangedSnackbar } from "../../../redux/slices/snackbarsSlice";
 
-import ToggleSwitch from "../ToggleSwitch";
+import ToggleSwitch from "../../inputs/ToggleSwitch";
 
-import { useAppSelector, useAppDispatch } from "../../hooks";
+import { useAppSelector, useAppDispatch } from "../../../hooks";
 
 import Draggable from "react-draggable";
 

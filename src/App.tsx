@@ -1,10 +1,10 @@
 import { ThemeProvider, createTheme } from "@mui/material";
 import { useAppSelector } from "./shared/hooks";
 import { RootState } from "./shared/redux/store";
-import AnimatedRoutes from "./AnimatedRoutes";
+import AnimatedRoutes from "./shared/components/core/AnimatedRoutes/AnimatedRoutes";
 import { CssBaseline } from "@mui/material/";
-import Dialogs from "./Dialogs";
-import Snackbars from "./Snackbars";
+import Dialogs from "./shared/components/core/Dialogs/Dialogs";
+import Snackbars from "./shared/components/core/Snackbars/Snackbars";
 
 // import { Typography, makeStyles } from "@mui/material";
 // import { styled } from "@mui/material/styles";

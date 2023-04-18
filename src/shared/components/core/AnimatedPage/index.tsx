@@ -1,6 +1,5 @@
 import React from "react";
 import { motion } from "framer-motion";
-import "./index.scss";
 
 const animations = {
   initial: {
@@ -29,7 +28,10 @@ const AnimatedPage = ({ children }: Props) => {
       animate="animate"
       exit="exit"
       transition={{ duration: 1 }}
-      className="animated-page"
+      style={{
+        width: "100%",
+        height: "100%",
+      }}
     >
       {children}
     </motion.div>

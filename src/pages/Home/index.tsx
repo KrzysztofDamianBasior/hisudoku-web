@@ -8,10 +8,10 @@ import InternalNavigation from "./components/InternalNavigation";
 import GameCreator from "./components/GenerateGameBanner";
 import HomeBanner from "./components/HomeBanner";
 import AccountDashboard from "./components/AuthBanner";
-import GeometricBackground from "../../shared/components/GeometricBackground";
+import GeometricBackground from "../../shared/components/backgrounds/GeometricBackground";
 
 import "./index.scss";
-import AnimatedPage from "../../shared/components/AnimatedPage";
+import AnimatedPage from "../../shared/components/core/AnimatedPage";
 import CheckMoreBanner from "./components/CheckMoreBanner";
 
 export default function Home() {

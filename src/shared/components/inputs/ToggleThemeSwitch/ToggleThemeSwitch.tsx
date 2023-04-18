@@ -5,9 +5,9 @@ import {
   setDarkTheme,
   setLightTheme,
   toggleTheme,
-} from "../../redux/slices/themeSlice";
-import { RootState } from "../../redux/store";
-import { useAppSelector } from "../../hooks";
+} from "../../../redux/slices/themeSlice";
+import { RootState } from "../../../redux/store";
+import { useAppSelector } from "../../../hooks";
 import { useDispatch } from "react-redux";
 
 import LightModeIcon from "@mui/icons-material/LightMode";

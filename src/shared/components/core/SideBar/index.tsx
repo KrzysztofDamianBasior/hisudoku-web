@@ -1,6 +1,6 @@
 import React, { useState } from "react";
-import Logo from "../../assets/icon.png";
-import ToggleThemeSwitch from "../ToggleThemeSwitch/ToggleThemeSwitch";
+import Logo from "../../../assets/icon.png";
+import ToggleThemeSwitch from "../../inputs/ToggleThemeSwitch/ToggleThemeSwitch";
 import {
   BsArrowRightCircle,
   BsSearch,
@@ -12,9 +12,9 @@ import { AiOutlineRobot, AiOutlineUnorderedList } from "react-icons/ai";
 import {
   closeGameSettingsDialog,
   openGameSettingsDialog,
-} from "../../redux/slices/dialogsSlice";
+} from "../../../redux/slices/dialogsSlice";
 
-import { useAppDispatch, useAppSelector } from "../../hooks";
+import { useAppDispatch, useAppSelector } from "../../../hooks";
 import { Link } from "react-router-dom";
 import { useTheme, styled } from "@mui/material/styles";
 import CachedIcon from "@mui/icons-material/Cached";

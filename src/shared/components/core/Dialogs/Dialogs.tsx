@@ -1,4 +1,4 @@
-import GameSettingsDialog from "./shared/components/GameSettingsDialog";
+import GameSettingsDialog from "../../dialogs/GameSettingsDialog";
 
 const Dialogs = () => {
   return (

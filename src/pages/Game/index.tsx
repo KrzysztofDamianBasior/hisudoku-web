@@ -1,13 +1,13 @@
 import Box from "@mui/material/Box";
 
 // import SideBar from "../../shared/components/SideBar";
-import SideBar from "../../shared/components/SideBar";
+import SideBar from "../../shared/components/core/SideBar";
 import SudokuBoard from "./components/SudokuBoard";
 import SudokuToolset from "./components/SudokuToolset";
 import Timer from "./components/Timer";
 import SudokuKeyboard from "./components/SudokuKeyboard";
 
-import AnimatedPage from "../../shared/components/AnimatedPage";
+import AnimatedPage from "../../shared/components/core/AnimatedPage";
 
 const Game = () => {
   return (
