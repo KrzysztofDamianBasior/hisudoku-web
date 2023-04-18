@@ -1,6 +1,7 @@
 import Box from "@mui/material/Box";
 
-import SideBar from "./components/SideBar";
+// import SideBar from "../../shared/components/SideBar";
+import SideBar from "../../shared/components/SideBar";
 import SudokuBoard from "./components/SudokuBoard";
 import SudokuToolset from "./components/SudokuToolset";
 import Timer from "./components/Timer";
